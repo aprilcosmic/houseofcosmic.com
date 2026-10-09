@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- DUMMY: quitar noindex el día del lanzamiento -->
+  <meta name="robots" content="noindex">
+  <title>Tienda · Cowboy Cosmic Ball</title>
+  <meta name="description" content="Boletos, merch y el Paquete Cosmic del Cowboy Cosmic Ball. Pagas en línea y recoges todo en el evento.">
+  <link rel="stylesheet" href="assets/css/base.css">
+</head>
+<body>
+  <header class="site-header">
+    <!-- LOGO: reemplazar por el logo de House of Cosmic -->
+    <a class="logo" href="index.html" aria-label="House of Cosmic, inicio">[Logo House of Cosmic]</a>
+    <nav>
+      <a href="el-ball.html">El ball</a>
+      <a href="casas.html">Las casas</a>
+      <a href="categorias.html">Categorías</a>
+      <a href="jueces.html">Talento</a>
+      <a href="house-of-cosmic.html">House of Cosmic</a>
+      <a href="preguntas.html">Preguntas</a>
+      <a href="tienda.html" aria-current="page">Tienda</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>Tienda</h1>
+      <p>Aquí apartas tu lugar y tu merch. Pagas en línea y todo se entrega en persona el día del ball: tu boleto es tu acceso y tu merch te espera en la mesa de entrega. Si no puedes ir, alguien más puede recoger por ti con identificación, o te la enviamos pagando el envío aparte.</p>
+      <p><a href="#como-funciona">Cómo funciona la compra</a></p>
+      <!-- REVELAR (16 nov): precios y botones de compra. En el teaser la tienda se ve sin precios -->
+      <!-- PAGOS: los botones apuntan a Stripe Payment Links. Se conectan al final -->
+    </section>
+
+    <section id="paquete-cosmic" class="producto">
+      <p class="kicker">Paquete</p>
+      <h2>Paquete Cosmic</h2>
+      <p>Boleto + playera + abanico, por menos de lo que pagarías comprándolos por separado.</p>
+      <!-- POR CONFIRMAR: precio. Propuesta del roadmap: $650. ¿Sube con las fases del boleto? -->
+      <p class="precio">$[por confirmar] MXN</p>
+      <p>Incluye selección de talla de playera.</p>
+      <p><a class="btn btn-desactivado" href="#" aria-disabled="true">Próximamente</a></p>
+    </section>
+
+    <section id="boletos">
+      <h2>Boletos</h2>
+      <p>Tu boleto es tu acceso al ball y te permite caminar en todas las categorías que quieras.</p>
+      <p>El precio sube por fases. Mientras antes compres, menos pagas.</p>
+      <!-- POR CONFIRMAR: precios y fechas. Propuesta del roadmap:
+           Preventa Vaquere $200 (16 nov a 31 dic, cupo 60)
+           Preventa $250 (1 ene a 28 feb)
+           General $300 (1 a 26 mar)
+           Taquilla $350 (solo el día, si queda cupo) -->
+      <table>
+        <thead>
+          <tr><th scope="col">Fase</th><th scope="col">Fechas</th><th scope="col">Precio</th><th scope="col"></th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Preventa Vaquere<br><small>Solo 60 boletos</small></td>
+            <td>16 nov a 31 dic</td>
+            <td>$[por confirmar]</td>
+            <td><a class="btn btn-desactivado" href="#" aria-disabled="true">Próximamente</a></td>
+          </tr>
+          <tr>
+            <td>Preventa</td>
+            <td>1 ene a 28 feb</td>
+            <td>$[por confirmar]</td>
+            <td><a class="btn btn-desactivado" href="#" aria-disabled="true">Próximamente</a></td>
+          </tr>
+          <tr>
+            <td>General</td>
+            <td>1 a 26 mar</td>
+            <td>$[por confirmar]</td>
+            <td><a class="btn btn-desactivado" href="#" aria-disabled="true">Próximamente</a></td>
+          </tr>
+          <tr>
+            <td>Taquilla</td>
+            <td>El día del ball, si queda cupo</td>
+            <td>$[por confirmar]</td>
+            <td>Solo en puerta</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="merch">
+      <h2>Merch</h2>
+      <p>La merch se hace sobre pedido: solo mandamos a hacer las piezas que se piden, así que no hay stock ni venta de merch el día del evento. Se entrega el día del ball. Pedidos abiertos hasta el 28 de febrero.</p>
+
+      <div class="producto" id="playera">
+        <h3>Playera Cowboy Cosmic</h3>
+        <!-- POR CONFIRMAR: diseño final (Ulises), color y precio. Propuesta: $380 -->
+        <p class="placeholder">[Foto de la playera]</p>
+        <p>[Descripción del diseño]</p>
+        <p>Tallas: CH, M, G, XG, XXG.</p>
+        <!-- POR CONFIRMAR: tabla de medidas -->
+        <p class="precio">$[por confirmar] MXN</p>
+        <p><a class="btn btn-desactivado" href="#" aria-disabled="true">Próximamente</a></p>
+      </div>
+
+      <div class="producto" id="abanico">
+        <h3>Abanico Cowboy Cosmic</h3>
+        <!-- POR CONFIRMAR: diseño final y precio. Propuesta: $150 -->
+        <p class="placeholder">[Foto del abanico]</p>
+        <p>[Descripción del diseño]</p>
+        <p class="precio">$[por confirmar] MXN</p>
+        <p><a class="btn btn-desactivado" href="#" aria-disabled="true">Próximamente</a></p>
+      </div>
+    </section>
+
+    <section id="como-funciona">
+      <h2>Cómo funciona la compra</h2>
+      <ol>
+        <li><strong>Eliges y pagas en línea.</strong> Te pedimos tu nombre, correo, teléfono y, si compras playera, tu talla.</li>
+        <li><strong>Te llega tu comprobante por correo.</strong> Ese correo es tu reserva. Guárdalo.</li>
+        <li><strong>El día del ball das tu nombre en la entrada.</strong> Tu boleto es tu acceso, no necesitas imprimir nada.</li>
+        <li><strong>Recoges tu merch en la mesa de entrega</strong> con tu nombre o tu número de pedido.</li>
+      </ol>
+      <!-- POR CONFIRMAR: métodos de pago (tarjeta, ¿OXXO?) según la cuenta de Stripe -->
+      <p><strong>Métodos de pago:</strong> [por confirmar]</p>
+      <p><strong>Reembolsos:</strong> no hay reembolsos una vez procesada una compra, pero puedes transferir tu boleto o tu merch a otra persona.</p>
+      <p><strong>¿No puedes ir?</strong> Alguien más puede recoger tu merch presentando identificación, o te la enviamos pagando el envío aparte.</p>
+      <p><strong>Factura:</strong> no facturamos.</p>
+      <p>¿Dudas sobre tu compra? Escríbenos a <a href="mailto:info@aprilcosmic.com">info@aprilcosmic.com</a>.</p>
+      <p><a href="preguntas.html#compras">Más preguntas sobre compras, cambios y reembolsos</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Cowboy Cosmic Ball · Una producción de House of Cosmic</p>
+    <p>Contacto: <a href="mailto:info@aprilcosmic.com">info@aprilcosmic.com</a> · 644 146 9112</p>
+    <p><a href="https://www.instagram.com/houseofcosmic/">Instagram</a></p>
+  </footer>
+</body>
+</html>
