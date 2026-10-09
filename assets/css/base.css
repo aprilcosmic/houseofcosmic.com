@@ -1,0 +1,72 @@
+/* Estilos mínimos de lectura para el DUMMY de contenido.
+   El diseño real (paleta, tipografías, Figma de Ulises) se aplica después. */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background: #fff;
+}
+
+.site-header, main, .site-footer {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.site-header { border-bottom: 1px solid #ddd; }
+.site-header .logo { font-weight: 700; text-decoration: none; color: inherit; }
+.site-header nav { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 8px; }
+.site-header nav a[aria-current="page"] { font-weight: 700; }
+
+.site-footer { border-top: 1px solid #ddd; font-size: 0.9em; color: #555; }
+
+section { margin: 40px 0; }
+
+.kicker { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8em; margin-bottom: 0; }
+.tagline, .destacado { font-style: italic; font-size: 1.15em; }
+
+.datos { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; }
+.datos dt { font-weight: 700; }
+.datos dd { margin: 0; }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px solid #ddd; vertical-align: top; }
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid #222;
+  text-decoration: none;
+  color: inherit;
+}
+.btn-desactivado { opacity: 0.5; pointer-events: none; }
+
+.producto { margin: 24px 0; }
+.precio { font-weight: 700; }
+
+/* Hero: el countdown es lo primero y lo más grande */
+.hero { text-align: center; min-height: 70vh; display: flex; flex-direction: column; justify-content: center; }
+.countdown { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.countdown-unidad { display: flex; flex-direction: column; min-width: 64px; }
+.countdown-num { font-size: clamp(2.5rem, 12vw, 6rem); font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+.countdown-label { font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.08em; }
+.hero h1 { margin-bottom: 0; }
+
+.intermedio { text-align: center; border-top: 1px dashed #aaa; border-bottom: 1px dashed #aaa; padding: 8px; }
+
+/* Contenido listo pero que no se publica todavía */
+.borrador { padding: 12px; border: 2px solid #7a4fbf; }
+.borrador::before { content: "BORRADOR · no publicar todavía"; display: block; font-size: 0.75em; font-weight: 700; color: #7a4fbf; }
+
+/* Todo lo que todavía no tiene contenido real */
+.placeholder { color: #8a6d00; background: #fff8e1; }
+section.placeholder, .juez.placeholder { padding: 12px; border: 1px dashed #c9a400; }
+
+@media (max-width: 600px) {
+  .datos { grid-template-columns: 1fr; }
+  table { font-size: 0.9em; }
+}
