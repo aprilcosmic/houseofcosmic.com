@@ -2,7 +2,9 @@
 
 Sitio de House of Cosmic. Durante la campaña del Cowboy Cosmic Ball (27 de marzo de 2027) el sitio está dedicado casi por completo al ball.
 
-**Estado: dummy de contenido.** Sin diseño y sin pagos. El CSS actual solo hace legible el texto.
+**Estado: diseño "pared de carteles" (basado en el Pinterest Cowboy Cosmic), sin pagos.** El diseño vive en `assets/css/pared.css`, con la textura en `assets/img/papel.svg`. Tipografías locales en `assets/fonts`: Ultra, Rye, Oswald y Barlow. Ya no se usan y se pueden borrar: `base.css`, `cowboy.css`, `desierto.css`, `rodeo.css`, `assets/js/estrellas.js`, `estrella-*.svg`, `destello.svg`, `horizonte.svg` y las fuentes Anton, Space Mono, Fraunces y Courier Prime.
+
+Fotos de talento: dentro de `.tarjeta-foto` reemplaza el `<span class="foto-pendiente">` por un `<img>` recortado (PNG sin fondo); el estilo lo pone en blanco y negro sobre la estrella.
 
 ## Estructura
 

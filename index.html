@@ -7,116 +7,152 @@
   <meta name="robots" content="noindex">
   <title>Cowboy Cosmic Ball · House of Cosmic</title>
   <meta name="description" content="Cowboy Cosmic Ball, el segundo acto de la trilogía de balls de House of Cosmic. Sábado 27 de marzo de 2027, Ciudad Obregón, Sonora.">
-  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="preload" href="assets/fonts/ultra-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/pared.css">
 </head>
-<body>
+<body class="inicio">
   <header class="site-header">
     <!-- LOGO: reemplazar por el logo de House of Cosmic -->
     <a class="logo" href="index.html" aria-label="House of Cosmic, inicio">[Logo House of Cosmic]</a>
-    <nav>
+    <nav aria-label="Secciones">
       <a href="el-ball.html">El ball</a>
       <a href="casas.html">Las casas</a>
       <a href="categorias.html">Categorías</a>
       <a href="jueces.html">Talento</a>
       <a href="house-of-cosmic.html">House of Cosmic</a>
       <a href="preguntas.html">Preguntas</a>
-      <a href="tienda.html">Tienda</a>
     </nav>
+    <a class="btn-tienda" href="tienda.html">Tienda</a>
   </header>
 
   <main>
-    <!-- 1. HERO: el countdown es el centro de la landing -->
-    <section class="hero">
-      <div class="countdown" id="countdown" data-target="2027-03-27T21:00:00-07:00">
-        <!-- POR CONFIRMAR: la hora del countdown está puesta a las 9 PM, ajustar cuando haya hora oficial -->
-        <div class="countdown-unidad"><span class="countdown-num" data-unit="dias">--</span><span class="countdown-label">días</span></div>
-        <div class="countdown-unidad"><span class="countdown-num" data-unit="horas">--</span><span class="countdown-label">horas</span></div>
-        <div class="countdown-unidad"><span class="countdown-num" data-unit="minutos">--</span><span class="countdown-label">minutos</span></div>
-        <div class="countdown-unidad"><span class="countdown-num" data-unit="segundos">--</span><span class="countdown-label">segundos</span></div>
+    <!-- 1. HERO: la pared. Cartel principal con countdown, carteles detrás y stickers encima -->
+    <section class="muro">
+      <div class="cartel-fondo cf-1" aria-hidden="true"><span>Rodeo</span><span>Chitlin'</span><span>Circuit</span></div>
+      <div class="cartel-fondo cf-2" aria-hidden="true"><span>Yee</span><span>Haw</span></div>
+      <div class="cartel-fondo cf-3" aria-hidden="true"><span>Hecho</span><span>en</span><span>Sonora</span></div>
+
+      <div class="cartel-principal">
+        <p class="cp-presenta">House of Cosmic presenta el segundo acto</p>
+        <!-- LOGO: reemplazar por el logo del Cowboy Cosmic Ball cuando exista -->
+        <h1 class="titulo-ball">
+          <span class="t-cowboy">Cowboy</span>
+          <span class="t-cosmic">Cosmic</span>
+          <span class="t-ball">Ball</span>
+        </h1>
+
+        <div class="reloj" id="countdown" data-target="2027-03-27T21:00:00-07:00" aria-label="Cuenta regresiva al Cowboy Cosmic Ball">
+          <!-- POR CONFIRMAR: la hora del countdown está puesta a las 9 PM, ajustar cuando haya hora oficial -->
+          <div class="countdown-unidad"><span class="countdown-num" data-unit="dias">--</span><span class="countdown-label">días</span></div>
+          <div class="countdown-unidad"><span class="countdown-num" data-unit="horas">--</span><span class="countdown-label">horas</span></div>
+          <div class="countdown-unidad"><span class="countdown-num" data-unit="minutos">--</span><span class="countdown-label">min</span></div>
+          <div class="countdown-unidad"><span class="countdown-num" data-unit="segundos">--</span><span class="countdown-label">seg</span></div>
+        </div>
+
+        <p class="cp-lugar">Ciudad Obregón, Sonora</p>
+        <p class="cp-lema">Hay lugares que heredamos, hoy los reclamamos.</p>
       </div>
 
-      <!-- LOGO: reemplazar por el logo del Cowboy Cosmic Ball -->
-      <h1>Cowboy Cosmic Ball</h1>
-      <p>Sábado 27 de marzo de 2027 · Ciudad Obregón, Sonora</p>
-      <p class="tagline">Hay lugares que heredamos, hoy los reclamamos.</p>
+      <p class="sticker st-fecha" aria-label="Sábado 27 de marzo de 2027"><span>Sáb</span><b>27</b><span>Mar 2027</span></p>
+      <p class="sticker st-edad">+18</p>
+      <p class="sticker st-acto">Acto II<small>de la trilogía</small></p>
+      <span class="sticker st-estrella" aria-hidden="true"></span>
     </section>
 
     <!-- 2. QUÉ ES -->
-    <section>
-      <h2>Un ball de frontera, desierto y mito vaquero</h2>
-      <p>House of Cosmic presenta el segundo acto de su trilogía de balls. Esta vez tomamos al vaquero, uno de los símbolos más rígidos del norte, y lo vestimos, lo montamos, lo bailamos y lo maquillamos desde un cuerpo queer. El viejo oeste, visto desde Sonora y desde Cosmic.</p>
+    <section class="bloque-que">
+      <h2 class="frase-grande">Un ball de frontera, desierto y mito vaquero.</h2>
+      <div class="hoja hoja-cinta">
+        <p>Tomamos al vaquero, uno de los símbolos más rígidos del norte, y lo vestimos, lo montamos, lo bailamos y lo maquillamos desde un cuerpo queer. El viejo oeste, visto desde Sonora y desde Cosmic.</p>
+        <p><a href="el-ball.html">El concepto completo</a></p>
+      </div>
     </section>
 
     <!-- 3. QUÉ ES UN BALL -->
-    <section>
-      <h2>¿Qué es un ball?</h2>
-      <p>Una competencia de la cultura ballroom, parecida a una batalla de danza freestyle: el "farmear aura" original. Les participantes caminan o bailan en categorías (pasarela, vogue, actitud, lipsync) frente a un panel de jueces, el público grita cada caminata y las casas, que son familias elegidas, compiten por trofeos.</p>
-      <p>No necesitas conocer la escena para venir. Puedes ver, gritar y, si te animas, caminar.</p>
+    <section class="bloque-ball">
+      <div class="aura" aria-hidden="true">Farmear<br>aura</div>
+      <div class="hoja hoja-azul">
+        <h2>¿Qué es un ball?</h2>
+        <p>Una competencia de la cultura ballroom, parecida a una batalla de danza freestyle: el "farmear aura" original. Les participantes caminan o bailan en categorías frente a un panel de jueces, el público grita cada caminata y las casas, que son familias elegidas, compiten por trofeos.</p>
+        <p>No necesitas conocer la escena para venir. Puedes ver, gritar y, si te animas, caminar.</p>
+      </div>
     </section>
 
-    <!-- 4. LAS CASAS -->
-    <section>
+    <!-- 4. LAS CASAS: tres carteles pegados -->
+    <section class="bloque-casas">
       <h2>Tres casas, una noche</h2>
-      <p>El ball lo organizan tres colectivos juntos, porque la unidad dentro de la escena queer es lo que la hace grande.</p>
-      <ul>
-        <li><a href="https://www.instagram.com/houseofcosmic/">House of Cosmic</a>, la casa anfitriona.</li>
-        <li><a href="https://www.instagram.com/coven_leclair/">House of Le'Clair</a>, la casa de <a href="https://www.instagram.com/kaia_leclair/">Kaia</a>, que ganó 5 de los 7 trofeos de nuestro ball anterior.</li>
-        <li><a href="https://www.instagram.com/ballroomnavojoa/">Ballroom Navojoa</a>, el colectivo que llevó los balls a Navojoa.</li>
-      </ul>
+      <p class="bajada">La unidad dentro de la escena queer es lo que la hace grande.</p>
+      <div class="carteles-casas">
+        <a class="cartel-casa cc-cosmic" href="https://www.instagram.com/houseofcosmic/">
+          <span class="cc-rol">Casa anfitriona</span>
+          <span class="cc-nombre">House of Cosmic</span>
+          <span class="cc-ig">@houseofcosmic</span>
+        </a>
+        <a class="cartel-casa cc-leclair" href="https://www.instagram.com/coven_leclair/">
+          <span class="cc-rol">Coorganiza</span>
+          <span class="cc-nombre">House of Le'Clair</span>
+          <span class="cc-ig">@coven_leclair</span>
+        </a>
+        <a class="cartel-casa cc-navojoa" href="https://www.instagram.com/ballroomnavojoa/">
+          <span class="cc-rol">Coorganiza</span>
+          <span class="cc-nombre">Ballroom Navojoa</span>
+          <span class="cc-ig">@ballroomnavojoa</span>
+        </a>
+      </div>
+      <p class="nota-kaia">La casa de <a href="https://www.instagram.com/kaia_leclair/">Kaia</a> ganó 5 de los 7 trofeos de nuestro ball anterior.</p>
     </section>
 
-    <!-- 5. CATEGORÍAS -->
-    <section>
+    <!-- 5. CATEGORÍAS: placas de Sonora, en orden de pasada -->
+    <section class="bloque-placas">
       <h2>Ocho categorías</h2>
-      <p>Cada categoría pide algo distinto y cada una lleva un apodo, como capítulos del mismo universo. Puedes caminar las que quieras.</p>
-      <ol class="lista-categorias">
-        <li>Runway OTA</li>
-        <li>Faces Hold 'Em <small>(Face OTA)</small></li>
-        <li>In Formation <small>(Runway as a House)</small></li>
-        <li>King of the Rodeo <small>(Cowboy Realness)</small></li>
-        <li>Semental <small>(Sex Siren)</small></li>
-        <li>Chupacabras <small>(Bizarre)</small></li>
-        <li>Potra Bailarina <small>(Vogue Femme OTA)</small></li>
-        <li>Queen of the Rodeo <small>(Drag Lipsync)</small></li>
+      <p class="bajada">En el orden en que se caminan. OTA quiere decir "Open To All": abierta a cualquiera. Puedes caminar las que quieras.</p>
+      <ol class="placas">
+        <li class="placa"><span class="placa-edo">Sonora</span><span class="placa-nom">Runway OTA</span><span class="placa-cat">Pasarela abierta</span></li>
+        <li class="placa"><span class="placa-edo">Sonora</span><span class="placa-nom">Faces Hold 'Em</span><span class="placa-cat">Face OTA</span></li>
+        <li class="placa"><span class="placa-edo">Sonora</span><span class="placa-nom">In Formation</span><span class="placa-cat">Runway as a House</span></li>
+        <li class="placa"><span class="placa-edo">Sonora</span><span class="placa-nom">King of the Rodeo</span><span class="placa-cat">Cowboy Realness</span></li>
+        <li class="placa"><span class="placa-edo">Sonora</span><span class="placa-nom">Semental</span><span class="placa-cat">Sex Siren</span></li>
+        <li class="placa"><span class="placa-edo">Sonora</span><span class="placa-nom">Chupacabras</span><span class="placa-cat">Bizarre</span></li>
+        <li class="placa"><span class="placa-edo">Sonora</span><span class="placa-nom">Potra Bailarina</span><span class="placa-cat">Vogue Femme OTA</span></li>
+        <li class="placa placa-roja"><span class="placa-edo">Sonora</span><span class="placa-nom">Queen of the Rodeo</span><span class="placa-cat">Drag Lipsync · con registro</span></li>
       </ol>
-      <p>OTA quiere decir "Open To All": abierta a cualquiera, sin importar género o experiencia. Solo el Drag Lipsync pide registro previo, porque tiene lugares limitados.</p>
+      <p><a href="categorias.html">Qué pide cada categoría</a></p>
     </section>
 
-    <!-- 6. QUIÉN HACE LA NOCHE -->
-    <section>
-      <h2>Quién hace la noche</h2>
-      <ul>
-        <!-- REVELAR: jueces, uno por semana desde el 30 nov -->
-        <li><strong>Jueces:</strong> se revelan pronto.</li>
-        <li><strong>MC:</strong> Queenmi Grant Cosmic</li>
-        <li><strong>DJ:</strong> April Cosmic</li>
-      </ul>
+    <!-- 6. QUIÉN HACE LA NOCHE + LO PRÁCTICO, como boleto -->
+    <section class="bloque-boleto">
+      <div class="boleto">
+        <div class="boleto-cuerpo">
+          <h2>Lo que necesitas saber</h2>
+          <dl class="boleto-datos">
+            <dt>Cuándo</dt><dd>Sábado 27 de marzo de 2027</dd>
+            <dt>Dónde</dt><dd>Ciudad Obregón. Sede por revelar.</dd>
+            <!-- POR CONFIRMAR: hora -->
+            <dt>Hora</dt><dd>Por confirmar</dd>
+            <dt>Edad</dt><dd>Solo mayores de 18</dd>
+            <dt>Vestuario</dt><dd>Rodeo, desierto, frontera, cielo nocturno</dd>
+            <dt>MC</dt><dd>Queenmi Grant Cosmic</dd>
+            <dt>DJ</dt><dd>April Cosmic</dd>
+            <!-- REVELAR: jueces, uno por semana desde el 30 nov -->
+            <dt>Jueces</dt><dd>Se revelan pronto</dd>
+          </dl>
+        </div>
+        <div class="boleto-talon" aria-hidden="true"><span>Admite uno</span><b>CCB</b><span>27·03·27</span></div>
+      </div>
     </section>
 
-    <!-- 7. LO PRÁCTICO -->
-    <section>
-      <h2>Lo que necesitas saber</h2>
-      <ul>
-        <li>Evento para mayores de 18 años.</li>
-        <!-- REVELAR: sede, solo con contrato firmado -->
-        <li>Sede: por revelar.</li>
-        <!-- POR CONFIRMAR: hora -->
-        <li>Hora: por confirmar.</li>
-        <li>Tu boleto es tu acceso. Tu merch se paga en línea y la recoges el día del ball.</li>
-        <li>Tema de vestuario: rodeo, desierto, frontera, cielo nocturno.</li>
-      </ul>
-    </section>
-
-    <!-- 8. CIERRE: liga a la tienda (excepción permitida) -->
-    <section>
+    <!-- 7. CIERRE: liga a la tienda (excepción permitida) -->
+    <section class="bloque-cierre">
       <h2>Aparta tu lugar</h2>
-      <p>Boletos por fase, merch sobre pedido y el Paquete Cosmic con boleto, playera y abanico.</p>
+      <p>Boletos por fase, merch sobre pedido y el Paquete Cosmic con boleto, playera y abanico. Pagas en línea, recoges en el ball.</p>
       <p><a class="btn" href="tienda.html">Ir a la tienda</a></p>
     </section>
   </main>
 
+  <div class="cinta" aria-hidden="true"><div class="cinta-track"><span>★ Cowboy Cosmic Ball ★ Sáb 27 Mar 2027 ★ Cd. Obregón, Sonora ★ +18 ★ Acto II&nbsp;</span><span>★ Cowboy Cosmic Ball ★ Sáb 27 Mar 2027 ★ Cd. Obregón, Sonora ★ +18 ★ Acto II&nbsp;</span></div></div>
   <footer class="site-footer">
-    <p>Cowboy Cosmic Ball · Una producción de House of Cosmic</p>
+    <p class="footer-titulo">Cowboy Cosmic Ball</p>
+    <p>Un evento de <a href="https://www.instagram.com/houseofcosmic/">House of Cosmic</a>. Una producción de <a href="https://cosmomateria.com">CosmoMateria</a>.</p>
     <p>Contacto: <a href="mailto:info@aprilcosmic.com">info@aprilcosmic.com</a> · 644 146 9112</p>
     <p><a href="https://www.instagram.com/houseofcosmic/">Instagram</a></p>
   </footer>
