@@ -3,81 +3,113 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- DUMMY: quitar noindex el día del lanzamiento -->
+  <!-- Quitar noindex el día del lanzamiento -->
   <meta name="robots" content="noindex">
   <title>House of Cosmic · Cowboy Cosmic Ball</title>
   <meta name="description" content="House of Cosmic, casa ballroom de Ciudad Obregón, Sonora. Sus balls y la trilogía.">
-  <link rel="preload" href="assets/fonts/ultra-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/pared.css">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="assets/css/sitio.css">
 </head>
-<body class="interna">
-  <header class="site-header">
+<body>
+  <nav class="dock" aria-label="Secciones">
     <!-- LOGO: reemplazar por el logo de House of Cosmic -->
-    <a class="logo" href="index.html" aria-label="House of Cosmic, inicio">[Logo House of Cosmic]</a>
-    <nav aria-label="Secciones">
+    <a class="dock-logo" href="index.html" aria-label="House of Cosmic, inicio">HoC</a>
+    <div class="dock-links" id="dock-links">
       <a href="el-ball.html">El ball</a>
-      <a href="casas.html">Las casas</a>
+      <a href="casas.html">Casas</a>
       <a href="categorias.html">Categorías</a>
-      <a href="jueces.html">Talento</a>
-      <a href="house-of-cosmic.html" aria-current="page">House of Cosmic</a>
+      <a href="talento.html">Talento</a>
       <a href="preguntas.html">Preguntas</a>
-    </nav>
-    <a class="btn-tienda" href="tienda.html">Tienda</a>
-  </header>
+      <a href="house-of-cosmic.html" aria-current="page">La casa</a>
+    </div>
+    <span class="dock-reloj" data-mini-reloj aria-hidden="true"></span>
+    <a class="dock-comprar" href="tienda.html">Comprar</a>
+    <button class="dock-menu" type="button" aria-label="Menú" aria-expanded="false" aria-controls="dock-links"><span></span><span></span></button>
+  </nav>
 
   <main>
-    <section>
-      <h1>House of Cosmic</h1>
-      <p>Casa ballroom de Ciudad Obregón, Sonora. Madre: April Cosmic. <a href="https://www.instagram.com/houseofcosmic/">Instagram</a></p>
-      <!-- POR ESCRIBIR: manifiesto o texto de la casa -->
-      <p class="placeholder">[Quiénes somos, por qué existe la casa, qué hacemos en la escena de Sonora]</p>
+    <section class="cabecera cabecera-negra">
+      <div class="contenedor">
+        <h1>House of Cosmic.</h1>
+        <p class="lead">Casa ballroom de Ciudad Obregón, Sonora. Madre: April Cosmic.</p>
+        <p style="margin-top:20px"><a class="mas" href="https://www.instagram.com/houseofcosmic/" style="color:var(--enlace-noche)">@houseofcosmic</a></p>
+      </div>
     </section>
 
-    <section>
-      <h2>Nuestros balls</h2>
-      <ul class="lista-balls">
-        <li><strong>Fugaz</strong> · diciembre 2023</li>
-        <li><strong>Cosmic Renaissance Ball</strong> · febrero 2024 · Acto I de la trilogía</li>
-        <li><strong>Super Graphic</strong> · octubre 2024</li>
-        <li><strong>Cowboy Cosmic Ball</strong> · 27 de marzo de 2027 · Acto II de la trilogía · <a href="index.html">Ver el ball</a></li>
-      </ul>
-      <!-- POR AGREGAR: una foto o liga a galería por ball, número de asistentes, ganadores -->
+    <section class="bloque">
+      <div class="contenedor">
+        <!-- POR ESCRIBIR: manifiesto o texto de la casa -->
+        <p class="declaracion" style="margin-left:0"><span class="pendiente">Quiénes somos, por qué existe la casa y qué hacemos en la escena de Sonora</span></p>
+      </div>
     </section>
 
-    <section>
-      <h2>La trilogía</h2>
-      <p>Tres balls inspirados en la trilogía de álbumes de Beyoncé, cada uno leído desde Sonora y desde Cosmic.</p>
-      <ol>
-        <li><strong>Acto I:</strong> Cosmic Renaissance Ball</li>
-        <li><strong>Acto II:</strong> Cowboy Cosmic Ball</li>
-        <li><strong>Acto III:</strong> [por revelar]</li>
-      </ol>
+    <section class="bloque seccion-gris">
+      <div class="contenedor">
+        <h2>Nuestros balls.</h2>
+        <ol class="historia">
+          <li><p class="anio">Diciembre 2023</p><h3>Fugaz</h3></li>
+          <li><p class="anio">Febrero 2024</p><h3>Cosmic Renaissance Ball</h3><p class="acto">Acto I de la trilogía</p></li>
+          <li><p class="anio">Octubre 2024</p><h3>Super Graphic</h3></li>
+          <li class="actual"><p class="anio">Marzo 2027</p><h3>Cowboy Cosmic Ball</h3><p class="acto">Acto II de la trilogía · <a href="index.html" style="color:var(--enlace-noche)">Ver</a></p></li>
+        </ol>
+        <!-- POR AGREGAR: una foto o liga a galería por ball, asistentes, ganadores -->
+      </div>
     </section>
 
-    <section>
-      <h2>Integrantes</h2>
-      <ul>
-        <li>April Cosmic, madre</li>
-        <li>Mamma Donna Cosmic</li>
-        <li>Queenmi Grant Cosmic</li>
-        <li>Mijeiiy Cosmic</li>
-        <li>Charles Cosmic</li>
-        <li>Destiny Cosmic</li>
-      </ul>
+    <section class="bloque">
+      <div class="contenedor dos-col">
+        <h2>La trilogía.</h2>
+        <div class="prosa">
+          <p>Tres balls inspirados en la trilogía de álbumes de Beyoncé, cada uno leído desde Sonora y desde Cosmic.</p>
+          <dl class="datos" style="margin-top:12px">
+            <div><dt>Acto I</dt><dd>Cosmic Renaissance Ball</dd></div>
+            <div><dt>Acto II</dt><dd>Cowboy Cosmic Ball</dd></div>
+            <div><dt>Acto III</dt><dd>Por revelar</dd></div>
+          </dl>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>Contacto</h2>
-      <p>Para colaboraciones, prensa o patrocinios: <a href="mailto:info@aprilcosmic.com">info@aprilcosmic.com</a> · 644 146 9112</p>
+    <section class="bloque seccion-negra">
+      <div class="contenedor">
+        <h2>La casa.</h2>
+        <ul class="pildoras pildoras-noche">
+          <li>April Cosmic, madre</li><li>Mamma Donna Cosmic</li><li>Queenmi Grant Cosmic</li><li>Mijeiiy Cosmic</li><li>Charles Cosmic</li><li>Destiny Cosmic</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="bloque">
+      <div class="contenedor centrado">
+        <h2>Hablemos.</h2>
+        <p class="lead" style="margin-top:16px">Colaboraciones, prensa o patrocinios.</p>
+        <p><a class="boton" href="mailto:info@aprilcosmic.com">Escribir a info@aprilcosmic.com</a></p>
+      </div>
     </section>
   </main>
 
-  <div class="cinta" aria-hidden="true"><div class="cinta-track"><span>★ Cowboy Cosmic Ball ★ Sáb 27 Mar 2027 ★ Cd. Obregón, Sonora ★ +18 ★ Acto II&nbsp;</span><span>★ Cowboy Cosmic Ball ★ Sáb 27 Mar 2027 ★ Cd. Obregón, Sonora ★ +18 ★ Acto II&nbsp;</span></div></div>
-  <footer class="site-footer">
-    <p class="footer-titulo">Cowboy Cosmic Ball</p>
-    <p>Un evento de <a href="https://www.instagram.com/houseofcosmic/">House of Cosmic</a>. Una producción de <a href="https://cosmomateria.com">CosmoMateria</a>.</p>
-    <p>Contacto: <a href="mailto:info@aprilcosmic.com">info@aprilcosmic.com</a> · 644 146 9112</p>
-    <p><a href="https://www.instagram.com/houseofcosmic/">Instagram</a></p>
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie-col">
+        <div>
+          <h4>El ball</h4>
+          <ul><li><a href="el-ball.html">El concepto</a></li><li><a href="categorias.html">Categorías</a></li><li><a href="talento.html">Talento</a></li><li><a href="casas.html">Casas</a></li></ul>
+        </div>
+        <div>
+          <h4>Asistir</h4>
+          <ul><li><a href="tienda.html">Boletos y merch</a></li><li><a href="tienda.html#como-funciona">Cómo funciona la compra</a></li><li><a href="preguntas.html">Preguntas frecuentes</a></li></ul>
+        </div>
+        <div>
+          <h4>House of Cosmic</h4>
+          <ul><li><a href="house-of-cosmic.html">La casa</a></li><li><a href="https://www.instagram.com/houseofcosmic/">Instagram</a></li><li><a href="mailto:info@aprilcosmic.com">info@aprilcosmic.com</a></li><li><a href="tel:+526441469112">644 146 9112</a></li></ul>
+        </div>
+      </div>
+      <div class="pie-legal">
+        <p>Un evento de House of Cosmic. Una producción de <a href="https://cosmomateria.com">CosmoMateria</a>.</p>
+        <p>Ciudad Obregón, Sonora, México</p>
+      </div>
+    </div>
   </footer>
+  <script src="assets/js/sitio.js"></script>
 </body>
 </html>

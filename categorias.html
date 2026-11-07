@@ -3,114 +3,170 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- DUMMY: quitar noindex el día del lanzamiento -->
+  <!-- Quitar noindex el día del lanzamiento -->
   <meta name="robots" content="noindex">
   <title>Categorías · Cowboy Cosmic Ball</title>
   <meta name="description" content="Las ocho categorías del Cowboy Cosmic Ball, en el orden en que se caminan, cada una con su apodo.">
-  <link rel="preload" href="assets/fonts/ultra-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/pared.css">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="assets/css/sitio.css">
 </head>
-<body class="interna">
-  <header class="site-header">
+<body>
+  <nav class="dock" aria-label="Secciones">
     <!-- LOGO: reemplazar por el logo de House of Cosmic -->
-    <a class="logo" href="index.html" aria-label="House of Cosmic, inicio">[Logo House of Cosmic]</a>
-    <nav aria-label="Secciones">
+    <a class="dock-logo" href="index.html" aria-label="House of Cosmic, inicio">HoC</a>
+    <div class="dock-links" id="dock-links">
       <a href="el-ball.html">El ball</a>
-      <a href="casas.html">Las casas</a>
+      <a href="casas.html">Casas</a>
       <a href="categorias.html" aria-current="page">Categorías</a>
-      <a href="jueces.html">Talento</a>
-      <a href="house-of-cosmic.html">House of Cosmic</a>
+      <a href="talento.html">Talento</a>
       <a href="preguntas.html">Preguntas</a>
-    </nav>
-    <a class="btn-tienda" href="tienda.html">Tienda</a>
-  </header>
+      <a href="house-of-cosmic.html">La casa</a>
+    </div>
+    <span class="dock-reloj" data-mini-reloj aria-hidden="true"></span>
+    <a class="dock-comprar" href="tienda.html">Comprar</a>
+    <button class="dock-menu" type="button" aria-label="Menú" aria-expanded="false" aria-controls="dock-links"><span></span><span></span></button>
+  </nav>
 
   <main>
-    <section>
-      <h1>Categorías</h1>
-      <p>En un ball se compite por categorías: cada una pide algo distinto (una cara, una pasarela, un baile, una actitud) y un panel de jueces decide quién se lleva el trofeo. En el Cowboy Cosmic Ball cada categoría lleva un apodo propio, para que se lean como capítulos del mismo universo.</p>
-      <p>Cuando una categoría dice <strong>OTA</strong> significa "Open To All": abierta a cualquier participante, sin importar género o experiencia.</p>
-      <p>Puedes caminar todas las categorías que quieras, sin límite. Eso sí, cada una pide su propia preparación (un outfit que vaya con el tema, por ejemplo), así que vale la pena elegir. No necesitas inscribirte antes, salvo para el Drag Lipsync.</p>
-      <p>Las categorías van en el orden en que se caminan la noche del ball.</p>
+    <section class="cabecera">
+      <div class="contenedor">
+        <h1>Ocho categorías.</h1>
+        <p class="lead">Cada una pide algo distinto: una cara, una pasarela, un baile, una actitud. Un panel de jueces decide quién se lleva el trofeo. Van en el orden en que se caminan la noche del ball.</p>
+      </div>
     </section>
 
-    <section id="runway-ota">
-      <p class="kicker">1 · Runway OTA</p>
-      <!-- POR CONFIRMAR: apodo -->
-      <h2>Runway OTA</h2>
-      <p>La pasarela clásica del ballroom. Se juzga cómo caminas: postura, ritmo, presencia y cómo cargas el look de principio a fin.</p>
-      <p><strong>Premio:</strong> [por confirmar]</p>
+    <section class="bloque seccion-gris">
+      <div class="contenedor">
+        <div class="bento" style="margin-top:0">
+          <div class="tile tile-2"><p class="tile-titulo">OTA</p><p class="tile-texto">"Open To All": abierta a cualquiera, sin importar género o experiencia.</p></div>
+          <div class="tile tile-2"><p class="tile-titulo">Cuántas caminas</p><p class="tile-texto">Todas las que quieras, sin límite.</p></div>
+          <div class="tile tile-2 tile-ancho-movil"><p class="tile-titulo">Registro</p><p class="tile-texto">Llegas y caminas. Solo el lipsync se registra antes.</p></div>
+        </div>
+        <p class="chico" style="margin-top:24px">Cada categoría pide su propia preparación, como un outfit que vaya con el tema, así que vale la pena elegir.</p>
+      </div>
     </section>
 
-    <section id="faces-hold-em">
-      <p class="kicker">2 · Face OTA</p>
-      <h2>Faces Hold 'Em</h2>
-      <p>Aquí no se camina el outfit, se camina la cara. Les jueces miran de cerca: estructura, piel, expresión y cómo vendes tu rostro como la mejor carta de la mesa.</p>
-      <p><strong>Premio:</strong> [por confirmar]</p>
+    <section class="bloque">
+      <div class="contenedor">
+        <article class="cat-fila c1" id="runway-ota">
+          <div class="cat-ficha"><p class="num">1</p><p class="tipo">Pasarela abierta</p></div>
+          <div>
+            <!-- POR CONFIRMAR: apodo -->
+            <h2>Runway OTA</h2>
+            <div class="prosa">
+              <p>La pasarela clásica del ballroom. Se juzga cómo caminas: postura, ritmo, presencia y cómo cargas el look de principio a fin.</p>
+              <p class="premio">Premio: <span class="pendiente">por confirmar</span></p>
+            </div>
+          </div>
+        </article>
+        <article class="cat-fila c2" id="faces-hold-em">
+          <div class="cat-ficha"><p class="num">2</p><p class="tipo">Face OTA</p></div>
+          <div>
+            <h2>Faces Hold 'Em</h2>
+            <div class="prosa">
+              <p>Aquí no se camina el outfit, se camina la cara. Les jueces miran de cerca: estructura, piel, expresión y cómo vendes tu rostro como la mejor carta de la mesa.</p>
+              <p class="premio">Premio: <span class="pendiente">por confirmar</span></p>
+            </div>
+          </div>
+        </article>
+        <article class="cat-fila c3" id="in-formation">
+          <div class="cat-ficha"><p class="num">3</p><p class="tipo">Runway as a House</p></div>
+          <div>
+            <h2>In Formation</h2>
+            <div class="prosa">
+              <p>La casa camina junta. Se juzga a la familia completa: coordinación, concepto compartido y qué tan bien se ven como un solo cuerpo en la pasarela.</p>
+              <p class="premio">Premio: <span class="pendiente">por confirmar</span></p>
+            </div>
+          </div>
+        </article>
+        <article class="cat-fila c4" id="king-of-the-rodeo">
+          <div class="cat-ficha"><p class="num">4</p><p class="tipo">Cowboy Realness</p></div>
+          <div>
+            <h2>King of the Rodeo</h2>
+            <div class="prosa">
+              <p>Realness es pasar por real: que nadie dude que lo que ves es exactamente lo que eres. Aquí se trata de encarnar al vaquero, al de rancho, al de rodeo, al de la troca, y habitarlo a tu manera.</p>
+              <p class="premio">Premio: <span class="pendiente">por confirmar</span></p>
+            </div>
+          </div>
+        </article>
+        <article class="cat-fila c5" id="semental">
+          <div class="cat-ficha"><p class="num">5</p><p class="tipo">Sex Siren</p></div>
+          <div>
+            <h2>Semental</h2>
+            <div class="prosa">
+              <p>Seducción sobre la pasarela. Se juzga la actitud, la confianza y qué tanto calor le sacas a la sala sin decir una palabra.</p>
+              <p class="premio">Premio: <span class="pendiente">por confirmar</span></p>
+            </div>
+          </div>
+        </article>
+        <div class="pausa-banda">Intermedio de 20 minutos</div>
+        <article class="cat-fila c6" id="chupacabras">
+          <div class="cat-ficha"><p class="num">6</p><p class="tipo">Bizarre</p></div>
+          <div>
+            <h2>Chupacabras</h2>
+            <div class="prosa">
+              <p>Lo raro, lo monstruoso, lo inventado. Gana quien lleve el concepto más lejos: criaturas, leyendas del desierto y todo lo que no cabe en otra categoría.</p>
+              <p class="premio">Premio: <span class="pendiente">por confirmar</span></p>
+            </div>
+          </div>
+        </article>
+        <article class="cat-fila c7" id="potra-bailarina">
+          <div class="cat-ficha"><p class="num">7</p><p class="tipo">Vogue Femme OTA</p></div>
+          <div>
+            <h2>Potra Bailarina</h2>
+            <div class="prosa">
+              <p>Vogue femme es el baile de la escena: manos, giros, caídas y pasarela en el piso, con toda la feminidad y la fluidez que tu cuerpo quiera darle. Abierta a todes.</p>
+              <p class="premio">Premio: <span class="pendiente">por confirmar</span></p>
+            </div>
+          </div>
+        </article>
+        <article class="cat-fila c8" id="queen-of-the-rodeo">
+          <div class="cat-ficha"><p class="num">8</p><p class="tipo">Drag Lipsync</p></div>
+          <div>
+            <h2>Queen of the Rodeo</h2>
+            <div class="prosa">
+              <p>La categoría drag de la noche: una canción, un escenario y tu mejor interpretación. Es la categoría que pide registro previo, porque tiene lugares limitados.</p>
+              <p class="premio">Premio: <span class="pendiente">por confirmar</span></p>
+            <!-- POR CONFIRMAR: liga al Google Form de registro, número de lugares y fecha de cierre -->
+            <p><a class="boton" href="#">Regístrate para el lipsync</a></p>
+            <p><span class="pendiente">Lugares disponibles, fecha límite y reglas del lipsync por confirmar</span></p>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section id="in-formation">
-      <p class="kicker">3 · Runway as a House</p>
-      <h2>In Formation</h2>
-      <p>La casa camina junta. Se juzga a la familia completa: coordinación, concepto compartido y qué tan bien se ven como un solo cuerpo en la pasarela.</p>
-      <p><strong>Premio:</strong> [por confirmar]</p>
-    </section>
-
-    <section id="king-of-the-rodeo">
-      <p class="kicker">4 · Cowboy Realness</p>
-      <h2>King of the Rodeo</h2>
-      <p>Realness es pasar por real: que nadie dude que lo que ves es exactamente lo que eres. Aquí se trata de encarnar al vaquero, al de rancho, al de rodeo, al de la troca, y habitarlo a tu manera.</p>
-      <p><strong>Premio:</strong> [por confirmar]</p>
-    </section>
-
-    <section id="semental">
-      <p class="kicker">5 · Sex Siren</p>
-      <h2>Semental</h2>
-      <p>Seducción sobre la pasarela. Se juzga la actitud, la confianza y qué tanto calor le sacas a la sala sin decir una palabra.</p>
-      <p><strong>Premio:</strong> [por confirmar]</p>
-    </section>
-
-    <section class="intermedio">
-      <p><strong>Intermedio de 20 minutos</strong></p>
-    </section>
-
-    <section id="chupacabras">
-      <p class="kicker">6 · Bizarre</p>
-      <h2>Chupacabras</h2>
-      <p>Lo raro, lo monstruoso, lo inventado. Gana quien lleve el concepto más lejos: criaturas, leyendas del desierto y todo lo que no cabe en otra categoría.</p>
-      <p><strong>Premio:</strong> [por confirmar]</p>
-    </section>
-
-    <section id="potra-bailarina">
-      <p class="kicker">7 · Vogue Femme OTA</p>
-      <h2>Potra Bailarina</h2>
-      <p>Vogue femme es el baile de la escena: manos, giros, caídas y pasarela en el piso, con toda la feminidad y la fluidez que tu cuerpo quiera darle. Abierta a todes.</p>
-      <p><strong>Premio:</strong> [por confirmar]</p>
-    </section>
-
-    <section id="queen-of-the-rodeo">
-      <p class="kicker">8 · Drag Lipsync</p>
-      <h2>Queen of the Rodeo</h2>
-      <p>La categoría drag de la noche: una canción, un escenario y tu mejor interpretación. Es la categoría que pide registro previo, porque tiene lugares limitados.</p>
-      <p><strong>Premio:</strong> [por confirmar]</p>
-      <!-- POR CONFIRMAR: liga al Google Form de registro, número de lugares y fecha de cierre -->
-      <p><a class="btn" href="#">Regístrate para el lipsync</a></p>
-      <p class="placeholder">[Lugares disponibles, fecha límite de registro y reglas del lipsync]</p>
-    </section>
-
-    <section>
-      <h2>Reglas</h2>
-      <!-- POR ESCRIBIR: reglas generales y por categoría (se publican en marzo) -->
-      <p class="placeholder">[Reglas generales del ball y de cada categoría. Se publican en marzo]</p>
+    <section class="bloque seccion-gris">
+      <div class="contenedor centrado">
+        <h2>Reglas.</h2>
+        <!-- POR ESCRIBIR: reglas generales y por categoría (se publican en marzo) -->
+        <p class="lead" style="margin-top:16px"><span class="pendiente">Reglas generales y de cada categoría, se publican en marzo</span></p>
+      </div>
     </section>
   </main>
 
-  <div class="cinta" aria-hidden="true"><div class="cinta-track"><span>★ Cowboy Cosmic Ball ★ Sáb 27 Mar 2027 ★ Cd. Obregón, Sonora ★ +18 ★ Acto II&nbsp;</span><span>★ Cowboy Cosmic Ball ★ Sáb 27 Mar 2027 ★ Cd. Obregón, Sonora ★ +18 ★ Acto II&nbsp;</span></div></div>
-  <footer class="site-footer">
-    <p class="footer-titulo">Cowboy Cosmic Ball</p>
-    <p>Un evento de <a href="https://www.instagram.com/houseofcosmic/">House of Cosmic</a>. Una producción de <a href="https://cosmomateria.com">CosmoMateria</a>.</p>
-    <p>Contacto: <a href="mailto:info@aprilcosmic.com">info@aprilcosmic.com</a> · 644 146 9112</p>
-    <p><a href="https://www.instagram.com/houseofcosmic/">Instagram</a></p>
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie-col">
+        <div>
+          <h4>El ball</h4>
+          <ul><li><a href="el-ball.html">El concepto</a></li><li><a href="categorias.html">Categorías</a></li><li><a href="talento.html">Talento</a></li><li><a href="casas.html">Casas</a></li></ul>
+        </div>
+        <div>
+          <h4>Asistir</h4>
+          <ul><li><a href="tienda.html">Boletos y merch</a></li><li><a href="tienda.html#como-funciona">Cómo funciona la compra</a></li><li><a href="preguntas.html">Preguntas frecuentes</a></li></ul>
+        </div>
+        <div>
+          <h4>House of Cosmic</h4>
+          <ul><li><a href="house-of-cosmic.html">La casa</a></li><li><a href="https://www.instagram.com/houseofcosmic/">Instagram</a></li><li><a href="mailto:info@aprilcosmic.com">info@aprilcosmic.com</a></li><li><a href="tel:+526441469112">644 146 9112</a></li></ul>
+        </div>
+      </div>
+      <div class="pie-legal">
+        <p>Un evento de House of Cosmic. Una producción de <a href="https://cosmomateria.com">CosmoMateria</a>.</p>
+        <p>Ciudad Obregón, Sonora, México</p>
+      </div>
+    </div>
   </footer>
+  <script src="assets/js/sitio.js"></script>
 </body>
 </html>
