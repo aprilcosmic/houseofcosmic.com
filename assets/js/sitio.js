@@ -11,20 +11,22 @@ var BALL = {
 };
 
 // =========================================================
-// TIENDA: aquí se pegan los precios y las ligas de Stripe.
+// TIENDA: aquí se pegan los precios y las ligas de pago.
 // - precio: solo el número, sin signo ni comas (ej. 650).
-// - liga: la liga de pago de Stripe (empieza con https://buy.stripe.com/).
+// - liga: la liga de pago (Stripe o Mercado Pago).
 // Si la liga está vacía, el botón dice "Próximamente" y no se puede usar.
-// Si el precio está vacío, se ve "por confirmar".
+// Si el precio está vacío, se ve "Muy pronto".
 // =========================================================
 var TIENDA = {
-  paquete:  { precio: "", liga: "" }, // Paquete Cosmic (boleto + playera + abanico)
-  vaquere:  { precio: "", liga: "" }, // Boleto fase 1: Preventa Vaquere (cupo 60)
-  preventa: { precio: "", liga: "" }, // Boleto fase 2: Preventa
-  general:  { precio: "", liga: "" }, // Boleto fase 3: General
-  taquilla: { precio: "", liga: "" }, // Boleto fase 4: Taquilla (solo precio, se paga en puerta)
-  playera:  { precio: "", liga: "" }, // Playera Cowboy Cosmic
-  abanico:  { precio: "", liga: "" }  // Abanico Cowboy Cosmic
+  paquete:  { precio: "",    liga: "" }, // Paquete Cosmic (boleto + playera a elegir + abanico Cosmic)
+  leclair:  { precio: "",    liga: "" }, // Paquete L'eClair (boleto + playera a elegir + abanico L'eClair)
+  vaquere:  { precio: "150", liga: "" }, // Boleto fase 1: Preventa Vaquere, 16 al 22 nov
+  preventa: { precio: "200", liga: "" }, // Boleto fase 2: Preventa, 23 nov al 28 feb
+  general:  { precio: "300", liga: "" }, // Boleto fase 3: General, desde el 1 mar
+  taquilla: { precio: "",    liga: "" }, // Boleto fase 4: Taquilla (solo precio, se paga en puerta)
+  playera:  { precio: "400", liga: "" }, // Playera Cowboy Cosmic (dos diseños)
+  abanico:  { precio: "250", liga: "" }, // Abanico (Cosmic o L'eClair)
+  jutonio:  { precio: "",    liga: "" }  // Camiseta Jutonio
 };
 
 (function () {
@@ -32,7 +34,7 @@ var TIENDA = {
   var formato = function (n) { return "$" + Number(n).toLocaleString("es-MX"); };
   document.querySelectorAll("[data-precio]").forEach(function (el) {
     var p = TIENDA[el.getAttribute("data-precio")];
-    if (p && p.precio) { el.textContent = formato(p.precio); el.classList.remove("pendiente"); }
+    if (p && p.precio) { el.textContent = formato(p.precio); el.parentNode.classList.add("con-precio"); }
   });
   document.querySelectorAll("[data-producto]").forEach(function (el) {
     var p = TIENDA[el.getAttribute("data-producto")];
@@ -123,4 +125,153 @@ var TIENDA = {
     lista.addEventListener("scroll", actualizar, { passive: true });
     actualizar();
   });
+})();
+
+// =========================================================
+// CIELO: estrellas sobre todos los fondos negros.
+// Puntos de luz suaves (no dibujos), que titilan y se desplazan
+// muy lento, con una estrella fugaz de vez en cuando.
+// =========================================================
+(function () {
+  var hosts = document.querySelectorAll(".hero, .cabecera-negra, .seccion-negra, .paquete, .cierre, .pie");
+  var lienzo = document.createElement("canvas");
+  if (!hosts.length || !lienzo.getContext) return;
+  var quieto = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+  // tonos reales de estrellas: blanco, azulado, cálido y alguna rojiza
+  var TONOS = [[255, 255, 255], [255, 255, 255], [255, 255, 255], [212, 224, 255], [196, 212, 255], [255, 238, 218], [255, 214, 196]];
+  var brillos = TONOS.map(function (rgb) {
+    var s = 64, c = document.createElement("canvas");
+    c.width = c.height = s;
+    var g = c.getContext("2d");
+    var k = "rgba(" + rgb.join(",") + ",";
+    var r = g.createRadialGradient(s / 2, s / 2, 0, s / 2, s / 2, s / 2);
+    r.addColorStop(0, k + "1)");
+    r.addColorStop(0.07, k + "0.95)");
+    r.addColorStop(0.16, k + "0.35)");
+    r.addColorStop(0.4, k + "0.07)");
+    r.addColorStop(1, k + "0)");
+    g.fillStyle = r;
+    g.fillRect(0, 0, s, s);
+    return c;
+  });
+
+  var cielos = [];
+  hosts.forEach(function (host) {
+    var c = document.createElement("canvas");
+    c.className = "cielo";
+    c.setAttribute("aria-hidden", "true");
+    host.insertBefore(c, host.firstChild);
+    host.classList.add("con-cielo");
+    cielos.push({ host: host, c: c, ctx: c.getContext("2d"), estrellas: [], w: 0, h: 0, visible: true, fugaz: null, espera: 2000 + Math.random() * 6000 });
+  });
+
+  function poblar(o) {
+    var w = o.host.clientWidth, h = o.host.clientHeight;
+    if (!w || !h) return;
+    o.w = w; o.h = h;
+    o.c.width = Math.round(w * dpr); o.c.height = Math.round(h * dpr);
+    o.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var n = Math.min(900, Math.round((w * h) / 1900));
+    o.estrellas = [];
+    for (var i = 0; i < n; i++) {
+      var m = Math.pow(Math.random(), 5); // casi todas tenues, pocas brillantes
+      o.estrellas.push({
+        x: Math.random() * w, y: Math.random() * h,
+        tam: 2.2 + m * 11,                       // tamaño del halo
+        luz: 0.34 + m * 0.66,                    // brillo base
+        tono: Math.floor(Math.random() * TONOS.length),
+        fase: Math.random() * 6.283,
+        vel: 0.0006 + Math.random() * 0.0022,    // velocidad del titileo
+        prof: 0.2 + m * 0.8,                     // las brillantes se mueven más (parallax)
+        osc: 0.35 + Math.random() * 0.55         // cuánto se apagan al titilar
+      });
+    }
+  }
+
+  function dibujar(o, t, dt) {
+    var ctx = o.ctx, w = o.w, h = o.h;
+    ctx.clearRect(0, 0, w, h);
+    for (var i = 0; i < o.estrellas.length; i++) {
+      var s = o.estrellas[i];
+      if (!quieto) {
+        s.x -= s.prof * dt * 0.0045;
+        s.y += s.prof * dt * 0.0016;
+        if (s.x < -8) { s.x = w + 8; s.y = Math.random() * h; }
+        if (s.y > h + 8) { s.y = -8; s.x = Math.random() * w; }
+      }
+      var ola = 0.6 * Math.sin(s.fase + t * s.vel) + 0.4 * Math.sin(s.fase * 2.3 + t * s.vel * 2.9);
+      var a = s.luz * (1 - s.osc * (0.5 - 0.5 * ola));
+      ctx.globalAlpha = a;
+      ctx.drawImage(brillos[s.tono], s.x - s.tam / 2, s.y - s.tam / 2, s.tam, s.tam);
+    }
+    // estrella fugaz, muy de vez en cuando
+    if (!quieto) {
+      o.espera -= dt;
+      if (!o.fugaz && o.espera <= 0) {
+        var ang = (Math.random() < 0.5 ? 155 : 25) + Math.random() * 12;
+        ang = ang * Math.PI / 180;
+        o.fugaz = { x: w * (0.15 + Math.random() * 0.7), y: h * Math.random() * 0.5, dx: Math.cos(ang), dy: Math.sin(ang), largo: 70 + Math.random() * 90, dur: 650 + Math.random() * 450, t: 0 };
+        o.espera = 7000 + Math.random() * 9000;
+      }
+      if (o.fugaz) {
+        var f = o.fugaz; f.t += dt;
+        var p = f.t / f.dur;
+        if (p >= 1) { o.fugaz = null; }
+        else {
+          var recorrido = 260 * p;
+          var cx = f.x + f.dx * recorrido, cy = f.y + f.dy * recorrido;
+          var tx = cx - f.dx * f.largo, ty = cy - f.dy * f.largo;
+          var g = ctx.createLinearGradient(tx, ty, cx, cy);
+          g.addColorStop(0, "rgba(255,255,255,0)");
+          g.addColorStop(1, "rgba(255,255,255,0.85)");
+          ctx.globalAlpha = Math.sin(Math.PI * p) * 0.7;
+          ctx.strokeStyle = g;
+          ctx.lineWidth = 1.1;
+          ctx.lineCap = "round";
+          ctx.beginPath(); ctx.moveTo(tx, ty); ctx.lineTo(cx, cy); ctx.stroke();
+        }
+      }
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  cielos.forEach(poblar);
+
+  if (quieto) {
+    cielos.forEach(function (o) { dibujar(o, 0, 0); });
+  } else {
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entradas) {
+        entradas.forEach(function (e) {
+          cielos.forEach(function (o) { if (o.c === e.target) o.visible = e.isIntersecting; });
+        });
+      });
+      cielos.forEach(function (o) { io.observe(o.c); });
+    }
+    var antes = 0;
+    var ciclo = function (t) {
+      var dt = antes ? Math.min(t - antes, 50) : 16;
+      antes = t;
+      if (!document.hidden) {
+        for (var i = 0; i < cielos.length; i++) if (cielos[i].visible && cielos[i].w) dibujar(cielos[i], t, dt);
+      }
+      requestAnimationFrame(ciclo);
+    };
+    requestAnimationFrame(ciclo);
+  }
+
+  // si cambia el tamaño de una sección, se vuelve a sembrar su cielo
+  var resembrar = function (o) {
+    if (o.host.clientWidth !== o.w || o.host.clientHeight !== o.h) { poblar(o); if (quieto) dibujar(o, 0, 0); }
+  };
+  if ("ResizeObserver" in window) {
+    var ro = new ResizeObserver(function (entradas) {
+      entradas.forEach(function (e) { cielos.forEach(function (o) { if (o.host === e.target) resembrar(o); }); });
+    });
+    cielos.forEach(function (o) { ro.observe(o.host); });
+  } else {
+    window.addEventListener("resize", function () { cielos.forEach(resembrar); });
+  }
 })();

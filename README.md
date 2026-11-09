@@ -27,23 +27,29 @@ HTML plano, sin build. Se publica tal cual en GitHub Pages.
 
 La fecha del ball vive en un solo lugar: arriba de `assets/js/sitio.js` (`BALL.inicio`, `fechaLarga`, `fechaCorta`). Cámbiala ahí y se actualiza la cuenta regresiva y los textos con fecha.
 
-## Tienda y pagos (Stripe)
+## Tienda y pagos
 
-Los precios y las ligas de pago se pegan arriba de `assets/js/sitio.js`, en el bloque `TIENDA`. Cada botón se activa solo cuando su liga está puesta; mientras esté vacía dice "Próximamente". En cada liga de Stripe, después del pago, redirigir a `https://houseofcosmic.com/gracias.html`.
+Los precios y las ligas de pago se pegan arriba de `assets/js/sitio.js`, en el bloque `TIENDA`. Si el precio está vacío, se ve "Muy pronto". Cada botón se activa solo cuando su liga está puesta; mientras esté vacía dice "Próximamente". Después del pago, la liga debe redirigir a `https://houseofcosmic.com/gracias.html`.
 
-## Marcas en el código
+## Cielo de estrellas
 
-- `POR CONFIRMAR`, `POR ESCRIBIR`, `POR AGREGAR`: dato o texto que falta.
-- `REVELAR`: se publica en una fecha de la campaña.
-- `BORRADOR` / `NO PUBLICAR`: contenido listo que aún no se publica (en pantalla, marco morado).
-- `PAGOS`: aquí van los Stripe Payment Links.
+Todos los fondos negros (portada, cabeceras, secciones negras, paquetes, cierre y pie) llevan un cielo de estrellas que dibuja `sitio.js` al final del archivo. Para quitarlo de una sección, saca su clase de la lista `hosts`. Si la persona tiene activado "reducir movimiento" en su equipo, las estrellas se quedan quietas.
 
-En pantalla, lo pendiente sale resaltado en amarillo (clase `pendiente`).
+## Pendientes del sitio
+
+El sitio ya no lleva notas internas en el código. Lo que falta:
+
+- Precio de los dos paquetes, de la taquilla y de la camiseta Jutonio.
+- Ligas de pago de cada producto.
+- Fotos: integrantes de la casa, Kaia, Queenmi, April, playeras, abanicos y camiseta Jutonio. Mientras no hay foto, se ven las iniciales.
+- Resto del panel de jueces (solo Kaia es pública).
+- Liga al registro del lipsync.
+- Sede: en el sitio dice "por revelar" hasta tener contrato firmado.
+- Aliades y patrocinadores: la sección se quitó; se agrega cuando haya confirmados.
+- Fecha del ball sin confirmar (13 de marzo de 2027 en el sitio).
 
 ## Antes de lanzar
 
 - Quitar `<meta name="robots" content="noindex">` de todas las páginas.
-- Revisar que no quede nada en amarillo en lo que ya se anunció.
-- Quitar o mantener ocultas las fichas en borrador. Ojo: si el repo es público, su texto se puede leer en el código.
 
-_Última actualización: 7 de noviembre de 2026._
+_Última actualización: 9 de noviembre de 2026._

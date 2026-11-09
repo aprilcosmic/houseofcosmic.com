@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Quitar noindex el día del lanzamiento -->
   <meta name="robots" content="noindex">
   <title>Tienda · Cowboy Cosmic Ball</title>
   <meta name="description" content="Boletos, merch y el Paquete Cosmic del Cowboy Cosmic Ball. Pagas en línea y recoges todo en el evento.">
@@ -12,7 +11,6 @@
 </head>
 <body>
   <nav class="dock" aria-label="Secciones">
-    <!-- LOGO: reemplazar por el logo de House of Cosmic -->
     <a class="dock-logo" href="index.html" aria-label="House of Cosmic, inicio">HoC</a>
     <div class="dock-links" id="dock-links">
       <a href="el-ball.html">El ball</a>
@@ -28,30 +26,44 @@
   </nav>
 
   <main>
-    <!-- PAGOS: los precios y las ligas de Stripe se pegan en assets/js/sitio.js (bloque TIENDA).
-         Cada botón se activa solo cuando su liga está puesta. -->
-    <section class="cabecera">
+    <section class="cabecera cabecera-negra">
       <div class="contenedor">
         <h1>Aparta tu lugar.</h1>
         <p class="lead">Pagas en línea y todo se entrega en persona el día del ball. Tu boleto es tu acceso y tu merch te espera en la mesa de entrega.</p>
       </div>
     </section>
 
-    <section class="bloque" style="padding-top:0">
+    <section class="bloque" id="paquetes">
       <div class="contenedor-ancho">
-        <div class="paquete" id="paquete-cosmic">
-          <div>
-            <h2>Paquete Cosmic.</h2>
-            <p class="lead">Todo lo de la noche, por menos de lo que pagarías por separado.</p>
-            <!-- POR CONFIRMAR: precio. Propuesta del roadmap: $650. ¿Sube con las fases del boleto? -->
-            <p class="precio"><span class="pendiente" data-precio="paquete">$ por confirmar</span> <small>MXN</small></p>
-            <p><a class="boton" href="#" aria-disabled="true" data-producto="paquete">Próximamente</a></p>
+        <h2 class="centrado">Dos paquetes.</h2>
+        <p class="lead centrado-lead">Todo lo de la noche, por menos de lo que pagarías por separado. Elige tu casa.</p>
+        <div class="paquetes">
+          <div class="paquete" id="paquete-cosmic">
+            <div>
+              <p class="paquete-casa">House of Cosmic</p>
+              <h2>Paquete Cosmic.</h2>
+              <ul class="paquete-incluye">
+                <li>Boleto de acceso</li>
+                <li>Playera Cowboy Cosmic <small class="chico">eliges diseño y talla</small></li>
+                <li>Abanico Cosmic</li>
+              </ul>
+              <p class="precio"><span data-precio="paquete">Muy pronto</span> <small class="mxn">MXN</small></p>
+              <p><a class="boton" href="#" aria-disabled="true" data-producto="paquete">Próximamente</a></p>
+            </div>
           </div>
-          <ul class="paquete-incluye">
-            <li>Boleto de acceso</li>
-            <li>Playera Cowboy Cosmic <small class="chico">eliges tu talla</small></li>
-            <li>Abanico Cowboy Cosmic</li>
-          </ul>
+          <div class="paquete paquete-leclair" id="paquete-leclair">
+            <div>
+              <p class="paquete-casa">House of L'eClair</p>
+              <h2>Paquete L'eClair.</h2>
+              <ul class="paquete-incluye">
+                <li>Boleto de acceso</li>
+                <li>Playera Cowboy Cosmic <small class="chico">eliges diseño y talla</small></li>
+                <li>Abanico L'eClair</li>
+              </ul>
+              <p class="precio"><span data-precio="leclair">Muy pronto</span> <small class="mxn">MXN</small></p>
+              <p><a class="boton" href="#" aria-disabled="true" data-producto="leclair">Próximamente</a></p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -60,37 +72,33 @@
       <div class="contenedor">
         <h2>Boletos.</h2>
         <p class="lead" style="margin-top:14px">Tu boleto es tu acceso y te deja caminar en todas las categorías que quieras. El precio sube por fase: mientras antes compres, menos pagas.</p>
-        <!-- POR CONFIRMAR: precios y fechas. Propuesta del roadmap:
-             Preventa Vaquere $200 (16 nov a 31 dic, cupo 60) · Preventa $250 (1 ene a 28 feb)
-             General $300 (1 mar al día antes) · Taquilla $350 (solo el día, si queda cupo)
-             OJO: si el ball cambia de fecha, revisar las fechas de cada fase -->
         <div class="fases">
           <div class="fase">
             <p class="fase-num">Fase 1</p>
             <h3>Preventa Vaquere</h3>
-            <p class="fase-fechas">16 nov a 31 dic. Solo 60 boletos.</p>
-            <p class="precio"><span class="pendiente" data-precio="vaquere">$ por confirmar</span></p>
+            <p class="fase-fechas">16 al 22 de noviembre. Solo una semana.</p>
+            <p class="precio"><span data-precio="vaquere">Muy pronto</span></p>
             <a class="boton" href="#" aria-disabled="true" data-producto="vaquere">Próximamente</a>
           </div>
           <div class="fase">
             <p class="fase-num">Fase 2</p>
             <h3>Preventa</h3>
-            <p class="fase-fechas">1 ene a 28 feb.</p>
-            <p class="precio"><span class="pendiente" data-precio="preventa">$ por confirmar</span></p>
+            <p class="fase-fechas">23 de noviembre al 28 de febrero.</p>
+            <p class="precio"><span data-precio="preventa">Muy pronto</span></p>
             <a class="boton" href="#" aria-disabled="true" data-producto="preventa">Próximamente</a>
           </div>
           <div class="fase">
             <p class="fase-num">Fase 3</p>
             <h3>General</h3>
             <p class="fase-fechas">Desde el 1 de marzo.</p>
-            <p class="precio"><span class="pendiente" data-precio="general">$ por confirmar</span></p>
+            <p class="precio"><span data-precio="general">Muy pronto</span></p>
             <a class="boton" href="#" aria-disabled="true" data-producto="general">Próximamente</a>
           </div>
           <div class="fase">
             <p class="fase-num">Fase 4</p>
             <h3>Taquilla</h3>
             <p class="fase-fechas">El día del ball, si queda cupo.</p>
-            <p class="precio"><span class="pendiente" data-precio="taquilla">$ por confirmar</span></p>
+            <p class="precio"><span data-precio="taquilla">Muy pronto</span></p>
             <p class="fase-nota">Solo en puerta.</p>
           </div>
         </div>
@@ -100,44 +108,57 @@
     <section class="bloque" id="merch">
       <div class="contenedor">
         <h2>Merch.</h2>
-        <p class="lead" style="margin-top:14px">Hecha sobre pedido: solo mandamos a hacer lo que se pide, así que no hay venta de merch el día del evento. Pedidos abiertos hasta el 28 de febrero.</p>
+        <p class="lead" style="margin-top:14px">Hecha sobre pedido: solo mandamos a hacer lo que se pide, así que no hay venta de merch el día del evento. Pedidos abiertos hasta el 5 de marzo.</p>
         <div class="merch">
           <div class="producto" id="playera">
-            <!-- POR CONFIRMAR: diseño final (Ulises), color y precio. Propuesta: $380 -->
-            <div class="producto-foto">Foto de la playera</div>
+            <div class="producto-foto">Diseño muy pronto</div>
             <h3>Playera Cowboy Cosmic</h3>
-            <p class="chico" style="margin-top:8px">Tallas CH, M, G, XG y XXG.</p>
-            <!-- POR CONFIRMAR: tabla de medidas -->
-            <p class="precio"><span class="pendiente" data-precio="playera">$ por confirmar</span> <small>MXN</small></p>
+            <p class="chico" style="margin-top:8px">Dos diseños, eliges el tuyo. Tallas CH, M, G, XG y XXG.</p>
+            <p class="precio"><span data-precio="playera">Muy pronto</span> <small class="mxn">MXN</small></p>
             <a class="boton" href="#" aria-disabled="true" data-producto="playera">Próximamente</a>
           </div>
           <div class="producto" id="abanico">
-            <!-- POR CONFIRMAR: diseño final y precio. Propuesta: $150 -->
-            <div class="producto-foto">Foto del abanico</div>
+            <div class="producto-foto">Diseño muy pronto</div>
             <h3>Abanico Cowboy Cosmic</h3>
-            <p class="chico" style="margin-top:8px">Para la pasarela y para el calor.</p>
-            <p class="precio"><span class="pendiente" data-precio="abanico">$ por confirmar</span> <small>MXN</small></p>
+            <p class="chico" style="margin-top:8px">Dos versiones, Cosmic y L'eClair. Para la pasarela y para el calor.</p>
+            <p class="precio"><span data-precio="abanico">Muy pronto</span> <small class="mxn">MXN</small></p>
             <a class="boton" href="#" aria-disabled="true" data-producto="abanico">Próximamente</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="bloque seccion-gris" id="como-funciona">
+    <section class="bloque seccion-gris" id="mas-merch">
+      <div class="contenedor">
+        <h2>Más merch.</h2>
+        <p class="lead" style="margin-top:14px">También sobre pedido y también se recoge el día del ball.</p>
+        <div class="merch">
+          <div class="producto" id="jutonio">
+            <div class="producto-foto">Diseño muy pronto</div>
+            <h3>Camiseta Jutonio</h3>
+            <p class="chico" style="margin-top:8px">Hecha sobre pedido. Pedidos abiertos hasta el 5 de marzo.</p>
+            <p class="precio"><span data-precio="jutonio">Muy pronto</span> <small class="mxn">MXN</small></p>
+            <a class="boton" href="#" aria-disabled="true" data-producto="jutonio">Próximamente</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bloque" id="como-funciona">
       <div class="contenedor">
         <h2>Cómo funciona la compra.</h2>
         <ol class="pasos">
-          <li><strong>Eliges y pagas en línea.</strong><span>Te pedimos nombre, correo, teléfono y, si compras playera, tu talla.</span></li>
+          <li><strong>Eliges y pagas en línea.</strong><span>Te pedimos nombre, correo, teléfono y, si compras playera, tu diseño y tu talla.</span></li>
           <li><strong>Te llega tu comprobante.</strong><span>Ese correo es tu reserva. Guárdalo.</span></li>
           <li><strong>Das tu nombre en la entrada.</strong><span>Tu boleto es tu acceso. No necesitas imprimir nada.</span></li>
           <li><strong>Recoges tu merch.</strong><span>En la mesa de entrega, con tu nombre o tu número de pedido.</span></li>
         </ol>
         <dl class="datos" style="margin-top:64px">
-          <div><dt>Métodos de pago</dt><dd>Tarjeta de crédito o débito y efectivo en OXXO. El pago se procesa con Stripe.</dd></div>
+          <div><dt>Métodos de pago</dt><dd>Tarjeta de crédito o débito y efectivo en OXXO.</dd></div>
           <div><dt>Reembolsos</dt><dd>No hay reembolsos una vez procesada una compra, pero puedes transferir tu boleto o tu merch a otra persona.</dd></div>
           <div><dt>Si no puedes ir</dt><dd>Alguien más puede recoger tu merch presentando identificación, o te la enviamos pagando el envío aparte.</dd></div>
           <div><dt>Factura</dt><dd>No facturamos.</dd></div>
-          <div><dt>Dudas</dt><dd><a href="mailto:info@aprilcosmic.com">info@aprilcosmic.com</a> · <a class="mas" href="preguntas.html#compras">Preguntas sobre compras</a></dd></div>
+          <div><dt>Dudas</dt><dd><a href="mailto:info@houseofcosmic.com">info@houseofcosmic.com</a> · <a class="mas" href="preguntas.html#compras">Preguntas sobre compras</a></dd></div>
         </dl>
       </div>
     </section>
@@ -156,7 +177,7 @@
         </div>
         <div>
           <h4>House of Cosmic</h4>
-          <ul><li><a href="house-of-cosmic.html">La casa</a></li><li><a href="https://www.instagram.com/houseofcosmic/">Instagram</a></li><li><a href="mailto:info@aprilcosmic.com">info@aprilcosmic.com</a></li><li><a href="tel:+526441469112">644 146 9112</a></li></ul>
+          <ul><li><a href="house-of-cosmic.html">La casa</a></li><li><a href="https://www.instagram.com/houseofcosmic/">Instagram</a></li><li><a href="mailto:info@houseofcosmic.com">info@houseofcosmic.com</a></li><li><a href="tel:+526441469112">644 146 9112</a></li></ul>
         </div>
       </div>
       <div class="pie-legal">
