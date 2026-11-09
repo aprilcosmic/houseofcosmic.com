@@ -19,13 +19,13 @@ var BALL = {
 // =========================================================
 var TIENDA = {
   paquete:  { precio: "",    liga: "" }, // Paquete Cosmic (boleto + playera a elegir + abanico Cosmic)
-  leclair:  { precio: "",    liga: "" }, // Paquete L'eClair (boleto + playera a elegir + abanico L'eClair)
+  leclair:  { precio: "",    liga: "" }, // Paquete L'éClair (boleto + playera a elegir + abanico L'éClair)
   vaquere:  { precio: "150", liga: "" }, // Boleto fase 1: Preventa Vaquere, 16 al 22 nov
   preventa: { precio: "200", liga: "" }, // Boleto fase 2: Preventa, 23 nov al 28 feb
   general:  { precio: "300", liga: "" }, // Boleto fase 3: General, desde el 1 mar
   taquilla: { precio: "",    liga: "" }, // Boleto fase 4: Taquilla (solo precio, se paga en puerta)
   playera:  { precio: "400", liga: "" }, // Playera Cowboy Cosmic (dos diseños)
-  abanico:  { precio: "250", liga: "" }, // Abanico (Cosmic o L'eClair)
+  abanico:  { precio: "250", liga: "" }, // Abanico (Cosmic o L'éClair)
   jutonio:  { precio: "",    liga: "" }  // Camiseta Jutonio
 };
 
