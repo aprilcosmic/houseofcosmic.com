@@ -268,22 +268,6 @@ p { margin: 0 0 1em; }
   filter: blur(20px);
   pointer-events: none;
 }
-/* reflejos de bola disco */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: -20%;
-  background-image:
-    radial-gradient(circle, rgba(255,255,255,.9) 0 1px, transparent 2px),
-    radial-gradient(circle, rgba(255,255,255,.55) 0 1px, transparent 2px),
-    radial-gradient(circle, rgba(255,255,255,.35) 0 1.5px, transparent 2.5px);
-  background-size: 173px 151px, 97px 113px, 241px 199px;
-  background-position: 0 0, 40px 60px, 120px 30px;
-  -webkit-mask: radial-gradient(ellipse 60% 50% at 50% 45%, #000 0%, transparent 75%);
-  mask: radial-gradient(ellipse 60% 50% at 50% 45%, #000 0%, transparent 75%);
-  opacity: .5;
-  pointer-events: none;
-}
 .hero > * { position: relative; }
 .hero-presenta { font-size: clamp(17px, 2vw, 21px); color: var(--gris-noche); font-weight: 600; margin-bottom: 14px; }
 .hero-titulo {
@@ -651,33 +635,15 @@ p { margin: 0 0 1em; }
 
 /* ---------- Pie ---------- */
 
-.pie { background: var(--gris-claro); color: var(--gris); font-size: 12px; line-height: 1.33; letter-spacing: -.01em; padding: 32px 0 120px; }
-.pie a { color: #424245; }
-.pie-col { display: flex; flex-wrap: wrap; gap: 24px 64px; padding-bottom: 24px; border-bottom: 1px solid var(--linea); }
-.pie-col h4 { color: var(--tinta); font-size: 12px; font-weight: 600; margin: 0 0 10px; }
+.pie { background: var(--negro); color: var(--gris-noche); font-size: 12px; line-height: 1.33; letter-spacing: -.01em; padding: 48px 0 120px; }
+.pie a { color: #c7c7cc; }
+.pie a:hover { color: #fff; }
+.pie-col { display: flex; flex-wrap: wrap; gap: 24px 64px; padding-bottom: 24px; border-bottom: 1px solid #333336; }
+.pie-col h4 { color: var(--tinta-clara); font-size: 12px; font-weight: 600; margin: 0 0 10px; }
 .pie-col ul { list-style: none; padding: 0; margin: 0; }
 .pie-col li { margin: 0 0 8px; }
 .pie-legal { padding-top: 18px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
 .pie-legal p { margin: 0; }
-
-/* ---------- Pendientes y borradores (quitar al lanzar) ---------- */
-
-.pendiente { background: #fff6d6; color: #8a6100; border-radius: 6px; padding: 1px 6px; font-size: .9em; }
-.seccion-negra .pendiente, .tile-oscuro .pendiente, .paquete .pendiente { background: #3a3000; color: #ffd60a; }
-.borrador { outline: 2px dashed #bf5af2; outline-offset: 6px; }
-.borrador::before {
-  content: "Borrador, no publicar todavía";
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  z-index: 3;
-  background: #bf5af2;
-  color: #fff;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 980px;
-}
 
 /* ---------- Responsivo ---------- */
 
@@ -750,4 +716,57 @@ h2 + .lead, .carrusel-cabeza .lead { margin-top: 16px; }
 @media (prefers-reduced-motion: no-preference) {
   .hero-titulo { animation: aparecer 1.1s cubic-bezier(.2,.7,.2,1) .15s both, destello 2.4s ease-in-out .6s both; }
   @keyframes destello { from { background-position: 0 100%; } to { background-position: 0 30%; } }
+}
+
+/* =========================================================
+   CIELO DE ESTRELLAS (lo dibuja sitio.js sobre los fondos negros)
+   ========================================================= */
+.con-cielo { position: relative; isolation: isolate; overflow: hidden; }
+.cielo { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+.con-cielo > :not(.cielo) { position: relative; z-index: 1; }
+
+/* declaración con contraste de peso */
+.declaracion .ligera { font-weight: 300; }
+.declaracion strong { font-weight: 800; }
+
+/* iniciales mientras llegan las fotos */
+.monograma { background: var(--cromo-claro); color: var(--tinta); font-size: 48px; font-weight: 300; letter-spacing: -.04em; }
+.ficha-foto.monograma { background: linear-gradient(170deg, #2c2c2e, #000); color: #d2d2d7; font-size: 120px; font-weight: 200; }
+
+/* talento centrado de dos */
+.jueces { grid-template-columns: repeat(2, minmax(0, 340px)); justify-content: center; }
+.talento-dos { grid-template-columns: repeat(2, minmax(0, 340px)); justify-content: center; }
+.integrantes { margin-top: 40px; }
+.integrantes .persona h3 { font-size: 21px; }
+.integrantes .retrato { width: 112px; height: 112px; }
+
+/* categorías */
+.consejo { font-size: 16px; background: var(--gris-claro); border-radius: var(--radio-chico); padding: 18px 22px; margin-top: 20px; }
+.consejo strong { font-weight: 700; }
+.reglas { list-style: none; padding: 0; margin: 36px 0 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; counter-reset: regla; }
+.reglas li { background: #fff; border-radius: var(--radio-chico); padding: 28px; margin: 0; counter-increment: regla; color: var(--gris); }
+.reglas li::before { content: counter(regla); display: block; font-size: 14px; font-weight: 600; color: var(--gris); margin-bottom: 10px; }
+.reglas strong { display: block; color: var(--tinta); font-size: 19px; margin-bottom: 6px; }
+
+/* tienda: dos paquetes */
+.centrado-lead { text-align: center; max-width: 760px; margin: 16px auto 0; }
+#paquetes h2.centrado { margin: 0; }
+.paquetes { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
+.paquetes .paquete { grid-template-columns: 1fr; padding: clamp(36px, 5vw, 56px); align-items: start; }
+.paquetes .paquete h2 { font-size: clamp(30px, 3.4vw, 44px); margin-bottom: 24px; white-space: nowrap; }
+.paquetes .paquete::after { right: -35%; top: -30%; width: 110%; height: 120%; }
+.paquete-casa { font-size: 14px; font-weight: 600; color: var(--gris-noche); margin: 0 0 10px; }
+.paquete-leclair::after { background: radial-gradient(closest-side, rgba(44, 74, 124, .5), rgba(179, 38, 45, .2) 60%, transparent); }
+.precio .mxn { display: none; }
+.precio.con-precio .mxn { display: inline; }
+.seccion-gris .producto { background: #fff; }
+.producto-foto { background: var(--cromo-claro); color: var(--tinta); font-weight: 600; }
+.seccion-gris .producto-foto { background: var(--cromo-claro); }
+
+/* inicio: cierre de dudas */
+.dudas h2 { margin-bottom: 16px; }
+
+@media (max-width: 734px) {
+  .talento-dos, .paquetes, .reglas, .jueces { grid-template-columns: 1fr; }
+  .talento-dos, .jueces { justify-content: stretch; }
 }
