@@ -50,6 +50,6 @@ El sitio ya no lleva notas internas en el código. Lo que falta:
 
 ## Antes de lanzar
 
-- Quitar `<meta name="robots" content="noindex">` de todas las páginas.
+- Listo: el sitio ya se puede indexar (solo gracias.html y 404.html llevan noindex).
 
 _Última actualización: 9 de noviembre de 2026._
