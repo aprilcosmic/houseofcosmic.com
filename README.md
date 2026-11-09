@@ -39,7 +39,7 @@ Todos los fondos negros (portada, cabeceras, secciones negras, paquetes, cierre 
 
 El sitio ya no lleva notas internas en el código. Lo que falta:
 
-- Precio de los dos paquetes, de la taquilla y de la camiseta Jutonio.
+- Precio de los dos paquetes y de las playeras de Más merch.
 - Ligas de pago de cada producto.
 - Fotos: integrantes de la casa, Kaia, Queenmi, April, playeras, abanicos y camiseta Jutonio. Mientras no hay foto, se ven las iniciales.
 - Resto del panel de jueces (solo Kaia es pública).
