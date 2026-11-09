@@ -173,19 +173,21 @@ var TIENDA = {
     o.w = w; o.h = h;
     o.c.width = Math.round(w * dpr); o.c.height = Math.round(h * dpr);
     o.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    var n = Math.min(900, Math.round((w * h) / 1900));
+    var n = Math.min(1500, Math.round((w * h) / 1150));
     o.estrellas = [];
     for (var i = 0; i < n; i++) {
-      var m = Math.pow(Math.random(), 5); // casi todas tenues, pocas brillantes
+      var m = Math.pow(Math.random(), 3.2); // muchas tenues, varias brillantes
       o.estrellas.push({
         x: Math.random() * w, y: Math.random() * h,
-        tam: 2.2 + m * 11,                       // tamaño del halo
-        luz: 0.34 + m * 0.66,                    // brillo base
+        tam: 2.6 + m * 12,                       // tamaño del halo
+        luz: 0.42 + m * 0.58,                    // brillo base
         tono: Math.floor(Math.random() * TONOS.length),
         fase: Math.random() * 6.283,
-        vel: 0.0006 + Math.random() * 0.0022,    // velocidad del titileo
+        vel: 0.0014 + Math.random() * 0.0042,    // velocidad del titileo
         prof: 0.2 + m * 0.8,                     // las brillantes se mueven más (parallax)
-        osc: 0.35 + Math.random() * 0.55         // cuánto se apagan al titilar
+        osc: 0.5 + Math.random() * 0.45,         // cuánto se apagan al titilar
+        chispa: Math.random() * 9000,            // cuándo atrapa la luz, como glitter
+        brillo: 0
       });
     }
   }
@@ -196,15 +198,20 @@ var TIENDA = {
     for (var i = 0; i < o.estrellas.length; i++) {
       var s = o.estrellas[i];
       if (!quieto) {
-        s.x -= s.prof * dt * 0.0045;
-        s.y += s.prof * dt * 0.0016;
+        s.x -= s.prof * dt * 0.006;
+        s.y += s.prof * dt * 0.002;
+        s.chispa -= dt;
+        if (s.chispa <= 0) { s.brillo = 1; s.chispa = 2500 + Math.random() * 9000; }
+        if (s.brillo > 0) s.brillo = Math.max(0, s.brillo - dt / 420);
         if (s.x < -8) { s.x = w + 8; s.y = Math.random() * h; }
         if (s.y > h + 8) { s.y = -8; s.x = Math.random() * w; }
       }
       var ola = 0.6 * Math.sin(s.fase + t * s.vel) + 0.4 * Math.sin(s.fase * 2.3 + t * s.vel * 2.9);
       var a = s.luz * (1 - s.osc * (0.5 - 0.5 * ola));
-      ctx.globalAlpha = a;
-      ctx.drawImage(brillos[s.tono], s.x - s.tam / 2, s.y - s.tam / 2, s.tam, s.tam);
+      var ch = s.brillo * s.brillo;                 // destello rápido que se apaga suave
+      var tam = s.tam * (1 + ch * 1.6);
+      ctx.globalAlpha = Math.min(1, a + ch);
+      ctx.drawImage(brillos[s.tono], s.x - tam / 2, s.y - tam / 2, tam, tam);
     }
     // estrella fugaz, muy de vez en cuando
     if (!quieto) {
