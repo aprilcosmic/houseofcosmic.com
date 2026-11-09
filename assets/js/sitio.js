@@ -26,7 +26,10 @@ var TIENDA = {
   taquilla: { precio: "",    liga: "" }, // Boleto fase 4: Taquilla (solo precio, se paga en puerta)
   playera:  { precio: "400", liga: "" }, // Playera Cowboy Cosmic (dos diseños)
   abanico:  { precio: "250", liga: "" }, // Abanico (Cosmic o L'éClair)
-  jutonio:  { precio: "",    liga: "" }  // Camiseta Jutonio
+  brinco:   { precio: "",    liga: "" }, // Playera Brinco
+  cabello:  { precio: "",    liga: "" }, // Playera Cabello de niña
+  graphic:  { precio: "",    liga: "" }, // Playera Super Graphic Girls Club
+  jutonio:  { precio: "",    liga: "" }  // Playera Jutonio, Take Off to the Planet (negra o blanca)
 };
 
 (function () {
@@ -43,6 +46,19 @@ var TIENDA = {
       el.removeAttribute("aria-disabled");
       el.textContent = "Comprar";
     }
+  });
+
+  // Versiones de un producto (abanico Cosmic o L'éClair, color de playera)
+  document.querySelectorAll(".variantes").forEach(function (grupo) {
+    var img = grupo.closest(".producto").querySelector(".producto-foto img");
+    grupo.querySelectorAll("button").forEach(function (b) {
+      var precarga = new Image(); precarga.src = b.getAttribute("data-img");
+      b.addEventListener("click", function () {
+        grupo.querySelectorAll("button").forEach(function (o) { o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
+        img.src = b.getAttribute("data-img");
+        img.alt = b.getAttribute("data-alt");
+      });
+    });
   });
 
   // Textos de fecha en todo el sitio
