@@ -796,3 +796,24 @@ h2 + .lead, .carrusel-cabeza .lead { margin-top: 16px; }
 /* enlaces a aprilcosmic.com en el nombre de April */
 a.nombre { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .18em; text-decoration-color: currentColor; }
 a.nombre:hover { opacity: .7; }
+
+/* inicio: tres burbujas de jueces */
+.trio { display: flex; justify-content: center; align-items: center; margin-bottom: 20px; }
+.trio .retrato { margin: 0; flex: none; }
+.trio .burbuja-misterio { width: 84px; height: 84px; background: var(--negro); color: var(--gris-noche); font-size: 28px; font-weight: 200; display: grid; place-items: center; }
+.trio .burbuja-misterio:first-child { margin-right: -14px; }
+.trio .burbuja-misterio:last-child { margin-left: -14px; }
+.trio a.retrato { position: relative; z-index: 1; box-shadow: 0 0 0 5px var(--gris-claro); }
+.seccion-gris .trio a.retrato { box-shadow: 0 0 0 5px #fff; }
+.persona-jueces h3 a { color: inherit; }
+
+/* portada: orden presenta, acto, título, fecha, cuenta regresiva */
+.hero-acto { margin: 0 0 4px; }
+.hero-datos { margin: 22px 0 56px; }
+.reloj { margin-bottom: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-acto { animation-delay: .1s; }
+  .hero-titulo { animation-delay: .2s; }
+  .hero-datos { animation-delay: .4s; }
+  .reloj { animation-delay: .6s; }
+}
