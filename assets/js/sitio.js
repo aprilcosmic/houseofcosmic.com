@@ -133,7 +133,7 @@ var TIENDA = {
 // muy lento, con una estrella fugaz de vez en cuando.
 // =========================================================
 (function () {
-  var hosts = document.querySelectorAll(".hero, .cabecera-negra, .seccion-negra, .paquete, .cierre, .pie");
+  var hosts = document.querySelectorAll(".hero, .cabecera-negra, .seccion-negra, .paquete, .cierre, .pie, .poster-pronto");
   var lienzo = document.createElement("canvas");
   if (!hosts.length || !lienzo.getContext) return;
   var quieto = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
