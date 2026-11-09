@@ -792,3 +792,7 @@ h2 + .lead, .carrusel-cabeza .lead { margin-top: 16px; }
 .variantes { display: flex; flex-wrap: wrap; gap: 8px; margin: -12px 0 20px; }
 .variantes button { font: inherit; font-size: 13px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--linea); background: transparent; color: var(--tinta); cursor: pointer; }
 .variantes button[aria-pressed="true"] { background: var(--tinta); border-color: var(--tinta); color: #fff; }
+
+/* enlaces a aprilcosmic.com en el nombre de April */
+a.nombre { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .18em; text-decoration-color: currentColor; }
+a.nombre:hover { opacity: .7; }
