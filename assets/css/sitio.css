@@ -783,3 +783,12 @@ h2 + .lead, .carrusel-cabeza .lead { margin-top: 16px; }
 /* fotos de personas */
 .retrato img { object-position: 50% 30%; }
 .ficha-foto img { object-position: 50% 25%; }
+
+/* fotos de merch y versiones */
+.producto-foto.con-foto { background: #fff; aspect-ratio: 1 / 1; padding: 6%; }
+.seccion-gris .producto-foto.con-foto { background: var(--gris-claro); }
+.producto-foto.con-foto img { width: 100%; height: 100%; object-fit: contain; display: block; }
+#abanico .producto-foto.con-foto { padding: 14%; }
+.variantes { display: flex; flex-wrap: wrap; gap: 8px; margin: -12px 0 20px; }
+.variantes button { font: inherit; font-size: 13px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--linea); background: transparent; color: var(--tinta); cursor: pointer; }
+.variantes button[aria-pressed="true"] { background: var(--tinta); border-color: var(--tinta); color: #fff; }
