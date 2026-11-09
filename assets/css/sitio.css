@@ -738,7 +738,7 @@ h2 + .lead, .carrusel-cabeza .lead { margin-top: 16px; }
 .talento-dos { grid-template-columns: repeat(2, minmax(0, 340px)); justify-content: center; }
 .integrantes { margin-top: 40px; }
 .integrantes .persona h3 { font-size: 21px; }
-.integrantes .retrato { width: 112px; height: 112px; }
+.integrantes .retrato { width: 156px; height: 156px; }
 
 /* categorías */
 .consejo { font-size: 16px; background: var(--gris-claro); border-radius: var(--radio-chico); padding: 18px 22px; margin-top: 20px; }
@@ -779,3 +779,7 @@ h2 + .lead, .carrusel-cabeza .lead { margin-top: 16px; }
 .poster-fugaz { background: #083b4c; }
 .poster-fugaz img { object-fit: contain; }
 .poster-pronto { display: grid; place-items: center; background: #000; color: var(--gris-noche); font-size: 15px; font-weight: 600; text-decoration: none; }
+
+/* fotos de personas */
+.retrato img { object-position: 50% 30%; }
+.ficha-foto img { object-position: 50% 25%; }
