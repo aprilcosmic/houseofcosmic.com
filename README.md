@@ -12,7 +12,7 @@ HTML plano, sin build. Se publica tal cual en GitHub Pages.
 |---|---|
 | `index.html` | Inicio: cuenta regresiva, lo esencial, casas, categorías, talento |
 | `el-ball.html` | Concepto, sí es / no es, tres ideas, apertura, orden de la noche, créditos |
-| `casas.html` | House of Cosmic, House of Le'Clair, Ballroom Navojoa, aliades |
+| `casas.html` | House of Cosmic, House of L'éClair, Ballroom Navojoa, aliades |
 | `categorias.html` | Las 8 categorías en orden, registro de lipsync, reglas |
 | `talento.html` | Jueces (borradores), MC y DJ |
 | `tienda.html` | Paquete Cosmic, boletos por fase, merch, cómo funciona la compra |
