@@ -817,3 +817,8 @@ a.nombre:hover { opacity: .7; }
   .hero-datos { animation-delay: .4s; }
   .reloj { animation-delay: .6s; }
 }
+
+/* La casa: cabecera con subtítulo */
+.casa-sub { font-size: clamp(24px, 3.6vw, 44px); line-height: 1.1; letter-spacing: -.02em; color: var(--tinta-clara); margin: 18px auto 0; }
+.casa-sub .ligera { font-weight: 300; }
+.casa-sub strong { font-weight: 800; }
