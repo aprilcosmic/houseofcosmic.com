@@ -12,7 +12,7 @@ HTML plano, sin build. Se publica tal cual en GitHub Pages.
 |---|---|
 | `index.html` | Inicio: cuenta regresiva, lo esencial, casas, categorías, talento |
 | `el-ball.html` | Concepto, sí es / no es, tres ideas, apertura, orden de la noche, créditos |
-| `casas.html` | House of Cosmic, House of L'éClair, Ballroom Navojoa, aliades |
+| `casas.html` | House of Cosmic, House of L'éclair, Ballroom Navojoa, aliades |
 | `categorias.html` | Las 8 categorías en orden, registro de lipsync, reglas |
 | `talento.html` | Jueces (borradores), MC y DJ |
 | `tienda.html` | Paquete Cosmic, boletos por fase, merch, cómo funciona la compra |
@@ -30,6 +30,10 @@ La fecha del ball vive en un solo lugar: arriba de `assets/js/sitio.js` (`BALL.i
 ## Tienda y pagos
 
 Los precios y las ligas de pago se pegan arriba de `assets/js/sitio.js`, en el bloque `TIENDA`. Si el precio está vacío, se ve "Muy pronto". Cada botón se activa solo cuando su liga está puesta; mientras esté vacía dice "Próximamente". Después del pago, la liga debe redirigir a `https://houseofcosmic.com/gracias.html`.
+
+## Identidad gráfica del ball
+
+`assets/css/identidad.css` se carga después de `sitio.css` y aplica la identidad del Cowboy Cosmic Ball: rojo, azul rey y carbón con grano, todo en degradados; Anton para títulos y Geist Mono para texto; estrellas de cinco picos y estrellas fugaces (`assets/img/identidad/`) como máscaras que se pintan con cualquier degradado. Las estrellas decorativas son los `div.decor` de cada cabecera; la franja roja antes del pie es `div.franja`.
 
 ## Cielo de estrellas
 

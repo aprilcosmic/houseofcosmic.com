@@ -1,0 +1,286 @@
+/* ==========================================================
+   Identidad gráfica del Cowboy Cosmic Ball
+   Rojo, azul rey y carbón con grano, estrellas de cinco picos
+   y estrellas fugaces. Sin bloques planos: todo color va en
+   degradado suave para que se sienta actual.
+   Se carga después de sitio.css y lo sobreescribe.
+   ========================================================== */
+
+@font-face {
+  font-family: "Anton";
+  src: url("../fonts/Anton-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  /* paleta del cartel */
+  --cc-rojo: #f52c10;
+  --cc-rojo-claro: #ff6a45;
+  --cc-rojo-osc: #b8170a;
+  --cc-azul: #2635d6;
+  --cc-azul-claro: #5868ff;
+  --cc-azul-osc: #161f86;
+  --cc-carbon: #232323;
+  --cc-carbon-2: #2b2b2b;
+  --cc-carbon-3: #343434;
+  --cc-hueso: #efeae3;
+
+  /* degradados: nunca color plano */
+  --g-rojo: linear-gradient(120deg, var(--cc-rojo-claro) 0%, var(--cc-rojo) 45%, var(--cc-rojo-osc) 100%);
+  --g-azul: linear-gradient(120deg, var(--cc-azul-claro) 0%, var(--cc-azul) 50%, var(--cc-azul-osc) 100%);
+  --g-cosmic: linear-gradient(115deg, #3d4cf0 0%, #6b45d8 38%, #c43a6a 68%, var(--cc-rojo) 100%);
+  --g-tarjeta: linear-gradient(160deg, rgba(255,255,255,.07) 0%, rgba(255,255,255,.025) 60%, rgba(255,255,255,.04) 100%);
+  --brillo-escena: radial-gradient(60% 50% at 12% 0%, rgba(245,44,16,.18), transparent 70%),
+                   radial-gradient(55% 45% at 92% 100%, rgba(38,53,214,.24), transparent 70%);
+
+  /* las variables del sitio, en modo cartel */
+  --fondo: var(--cc-carbon);
+  --gris-claro: var(--cc-carbon-3);
+  --tinta: var(--cc-hueso);
+  --tinta-clara: #fff;
+  --gris: #b3aea7;
+  --gris-noche: #b3aea7;
+  --linea: rgba(255,255,255,.12);
+  --negro: #1d1d1d;
+  --azul: var(--cc-azul);
+  --enlace: #ff8a6b;
+  --enlace-noche: #ff8a6b;
+  --rojo: var(--cc-rojo);
+  --mezclilla: var(--cc-azul);
+  --mezclilla-osc: var(--cc-azul-osc);
+  --hueso: var(--cc-hueso);
+  --cromo: var(--g-cosmic);
+  --cromo-claro: linear-gradient(150deg, #e9e6ff 0%, #c9c3ef 45%, #f1b8ad 100%);
+
+  --display: "Anton", "Arial Narrow", Impact, sans-serif;
+  --radio: 10px;
+  --radio-chico: 8px;
+
+  /* estrellas como máscaras: se pintan con cualquier degradado */
+  --m-estrella: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 95'%3E%3Cpath d='M50 0l11.8 35.2H99L69 57l11.6 36L50 71 19.4 93 31 57 1 35.2h37.2z'/%3E%3C/svg%3E");
+  --m-destello: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 0C53 35 65 47 100 50 65 53 53 65 50 100 47 65 35 53 0 50 35 47 47 35 50 0z'/%3E%3C/svg%3E");
+}
+
+/* ---------- Base: carbón con grano, como el cartel ---------- */
+body { background: var(--cc-carbon); background-image: var(--brillo-escena); background-attachment: fixed; color: var(--tinta); }
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: 90; pointer-events: none; opacity: .09; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+::selection { background: var(--cc-rojo); color: #fff; }
+
+/* ---------- Tipografía: Anton para gritar, Geist Mono para hablar ---------- */
+h1, h2, h3, .hero-titulo, .declaracion, .casa-sub, .reloj-num, .precio, .fase-num, .persona-rol, .ficha-rol, .paquete-casa, .anio, .cat-orden, .cat-ficha .num {
+  font-family: var(--display); font-weight: 400; text-transform: uppercase; letter-spacing: .01em;
+}
+h1 { line-height: .95; letter-spacing: 0; }
+h2 { line-height: .98; }
+h3 { line-height: 1.02; letter-spacing: .02em; }
+.lead, .chico, p { letter-spacing: -.005em; }
+.declaracion .ligera, .casa-sub .ligera { font-weight: 400; opacity: .55; }
+.declaracion strong, .casa-sub strong { font-weight: 400; }
+
+/* ---------- Secciones: nada de blanco, carbón con brillos ---------- */
+.seccion-gris { background: var(--cc-carbon-2); background-image: radial-gradient(70% 60% at 100% 0%, rgba(38,53,214,.16), transparent 70%); }
+.seccion-negra, .cabecera-negra, .pie { background: #1b1b1b; background-image: var(--brillo-escena); }
+.seccion-negra .lead, .cabecera-negra .lead { color: var(--gris); }
+
+/* títulos de sección como cintas del cartel, ladeadas y en degradado */
+.bloque > .contenedor > h2, .seccion > .contenedor > h2, .carrusel-cabeza h2, .faq-grupo h2 {
+  display: inline-block; padding: .1em .38em .04em; color: #fff;
+  background: var(--g-azul); transform: rotate(-1.6deg); box-shadow: 0 14px 40px -18px rgba(38,53,214,.8);
+}
+.seccion-gris .bloque > .contenedor > h2, .seccion-gris > .contenedor > h2, .seccion-gris .carrusel-cabeza h2 { background: var(--g-rojo); box-shadow: 0 14px 40px -18px rgba(245,44,16,.8); transform: rotate(1.2deg); }
+.faq-grupo h2 { font-size: clamp(24px, 3vw, 34px); border: 0; }
+
+/* etiquetas tipo "JUEZA": rojas, ladeadas, en degradado */
+.persona-rol, .ficha-rol, .fase-num, .paquete-casa, .anio, .cat-tipo, .casa-rol {
+  display: inline-block; background: var(--g-rojo); color: #fff !important; padding: .28em .6em .18em; font-size: 15px;
+  transform: rotate(-3deg); letter-spacing: .04em; margin-bottom: 14px;
+}
+.cat-tipo { font-family: var(--fuente); font-size: 12px; text-transform: uppercase; }
+
+/* ---------- Botones: rectángulos con degradado ---------- */
+.boton { background: var(--g-rojo); color: #fff; border-radius: 6px; font-family: var(--display); text-transform: uppercase; letter-spacing: .05em; font-size: 18px; padding: 13px 24px 11px; box-shadow: 0 12px 30px -14px rgba(245,44,16,.9); transition: transform .2s, box-shadow .2s, filter .2s; }
+.boton:hover { background: var(--g-cosmic); text-decoration: none; transform: translateY(-2px); box-shadow: 0 16px 34px -14px rgba(107,69,216,.9); }
+.boton[aria-disabled="true"], .seccion-negra .boton[aria-disabled="true"] { background: linear-gradient(120deg, #4a4a4a, #3a3a3a); color: #aaa; box-shadow: none; }
+.fase .boton { font-size: 15px; }
+.mas { color: #ff8a6b; }
+
+/* ---------- Cápsula ---------- */
+.dock { background: rgba(28,28,28,.78); }
+.dock::before { background: var(--g-cosmic); }
+.dock-logo { background: var(--g-cosmic); color: #fff; }
+.dock-links a[aria-current="page"] { background: var(--g-azul); color: #fff; }
+.dock-comprar { background: var(--g-rojo); color: #fff; font-family: var(--display); text-transform: uppercase; letter-spacing: .05em; }
+.dock-comprar:hover, .dock-comprar[aria-current="page"] { background: var(--g-cosmic); color: #fff; }
+
+/* ---------- Portada: el cartel ---------- */
+.hero { background: #1b1b1b; background-image: var(--brillo-escena); padding-top: 56px; }
+.hero::before { background: radial-gradient(closest-side, rgba(245,44,16,.16), rgba(38,53,214,.14) 55%, transparent); }
+.cinta-lugar {
+  font-family: var(--display); text-transform: uppercase; letter-spacing: .32em; font-size: clamp(14px, 1.6vw, 19px); color: #fff;
+  background: var(--g-rojo); padding: .55em 2.2em .45em; margin: 0 0 30px;
+  clip-path: polygon(0 0, 100% 0, 96% 50%, 100% 100%, 0 100%, 4% 50%);
+}
+.cartel { width: min(1180px, 100%); margin: 0 auto; }
+.cartel .hero-presenta {
+  font-family: var(--fuente); text-transform: uppercase; letter-spacing: .14em; font-size: clamp(11px, 1.25vw, 15px); font-weight: 500; color: #fff;
+  background: var(--g-azul); padding: .45em 1em; margin: 0;
+}
+.cartel .hero-titulo {
+  font-family: var(--display); color: transparent; background: linear-gradient(180deg, #ff7a52 0%, var(--cc-rojo) 55%, #c4170b 100%);
+  -webkit-background-clip: text; background-clip: text; animation: none;
+  font-size: clamp(64px, 15vw, 210px); line-height: .9; margin: 18px 0 6px; filter: drop-shadow(0 18px 50px rgba(245,44,16,.35));
+}
+.cartel .hero-titulo .linea { display: block; }
+.cartel .hero-acto { font-family: var(--display); text-transform: uppercase; letter-spacing: .3em; font-size: clamp(16px, 2vw, 22px); color: var(--gris); margin: 22px 0 0; }
+.barra-azul { height: 10px; background: var(--g-azul); border-radius: 2px; margin: 0; }
+.hero .hero-datos { font-family: var(--display); text-transform: uppercase; letter-spacing: .08em; font-size: clamp(20px, 2.6vw, 30px); font-weight: 400; margin: 30px 0 34px; }
+.hero .hero-datos span { color: #fff; }
+.hero .hero-datos .ciudad { color: var(--gris); }
+.reloj-num { font-size: clamp(56px, 10vw, 128px); font-weight: 400; letter-spacing: .01em; color: #fff; }
+.reloj-label { font-family: var(--fuente); text-transform: uppercase; letter-spacing: .14em; font-size: 12px; }
+
+/* destellos de cuatro picos dentro de las O del título */
+.o-estrella { position: relative; display: inline-block; }
+.o-estrella::after {
+  content: ""; position: absolute; left: 50%; top: 50%; width: .2em; height: .3em; transform: translate(-50%, -48%);
+  background: #fff; -webkit-mask: var(--m-destello) center / contain no-repeat; mask: var(--m-destello) center / contain no-repeat;
+}
+
+/* ---------- Estrellas decorativas (cinco picos y fugaces) ---------- */
+.decor { position: absolute; inset: 0; z-index: 0 !important; pointer-events: none; overflow: hidden; }
+.decor i { position: absolute; display: block; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; }
+.e5 { -webkit-mask-image: var(--m-estrella); mask-image: var(--m-estrella); aspect-ratio: 100 / 95; }
+.f1 { -webkit-mask-image: url("../img/identidad/fugaz-1.png"); mask-image: url("../img/identidad/fugaz-1.png"); aspect-ratio: 900 / 323; }
+.f2 { -webkit-mask-image: url("../img/identidad/fugaz-2.png"); mask-image: url("../img/identidad/fugaz-2.png"); aspect-ratio: 900 / 405; }
+.f3 { -webkit-mask-image: url("../img/identidad/fugaz-3.png"); mask-image: url("../img/identidad/fugaz-3.png"); aspect-ratio: 890 / 900; }
+.f4 { -webkit-mask-image: url("../img/identidad/fugaz-4.png"); mask-image: url("../img/identidad/fugaz-4.png"); aspect-ratio: 795 / 900; }
+.c-rojo { background: linear-gradient(140deg, rgba(255,106,69,.95), rgba(245,44,16,.75) 50%, rgba(245,44,16,.15)); }
+.c-azul { background: linear-gradient(140deg, rgba(88,104,255,.9), rgba(38,53,214,.7) 50%, rgba(38,53,214,.12)); }
+.c-cosmic { background: linear-gradient(120deg, rgba(88,104,255,.85), rgba(150,70,200,.6) 50%, rgba(245,44,16,.85)); }
+.c-tenue { opacity: .35; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .decor i { animation: flotar 9s ease-in-out infinite alternate; }
+  .decor i:nth-child(2n) { animation-duration: 12s; animation-direction: alternate-reverse; }
+  @keyframes flotar { from { transform: translate(0, 0) rotate(var(--r, 0deg)); } to { transform: translate(6px, -10px) rotate(calc(var(--r, 0deg) + 3deg)); } }
+}
+.decor i { transform: rotate(var(--r, 0deg)); }
+
+/* ---------- Tarjetas: vidrio oscuro con filo de color ---------- */
+.tile, .seccion-gris .tile, .persona, .seccion-gris .persona, .fase, .producto, .seccion-gris .producto, .historia li, .reglas li, .idea, .ficha, .seccion-negra .ficha, .casa, .seccion-negra .casa {
+  background: var(--g-tarjeta), var(--cc-carbon-2); border: 1px solid rgba(255,255,255,.08); color: var(--tinta);
+}
+.seccion-gris .persona, .seccion-gris .fase, .seccion-gris .producto, .seccion-gris .historia li, .seccion-gris .reglas li { background: var(--g-tarjeta), var(--cc-carbon-3); }
+.tile-oscuro { background: var(--g-cosmic) !important; border: 0; }
+.tile-color { background: var(--g-cosmic); -webkit-background-clip: text; background-clip: text; }
+.historia li.actual { background: var(--g-azul) !important; border: 0; }
+.reglas strong, .fase h3, .producto h3 { color: #fff; }
+.precio { color: #fff; }
+.fase .precio { font-size: 46px; background: linear-gradient(180deg, #ff8a6b, var(--cc-rojo)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* personas: tarjeta tipo cartel de jueces */
+.persona { position: relative; overflow: hidden; }
+.persona::before {
+  content: ""; position: absolute; width: 230px; aspect-ratio: 100 / 95; left: 50%; top: 4px; transform: translateX(-50%) rotate(-12deg);
+  -webkit-mask: var(--m-estrella) center / contain no-repeat; mask: var(--m-estrella) center / contain no-repeat;
+  background: linear-gradient(150deg, rgba(88,104,255,.55), rgba(38,53,214,.15)); pointer-events: none;
+}
+.talento .persona:nth-child(2)::before, .integrantes .persona:nth-child(2n)::before { background: linear-gradient(150deg, rgba(255,106,69,.55), rgba(245,44,16,.12)); transform: translateX(-50%) rotate(10deg); }
+.persona > * { position: relative; }
+.persona h3 { display: inline-block; background: var(--g-azul); color: #fff; padding: .14em .4em .06em; transform: rotate(-1.5deg); font-size: 26px; }
+.persona h3 a, .persona h3 a.nombre { color: #fff; text-decoration: none; }
+.retrato { box-shadow: 0 0 0 4px rgba(255,255,255,.9), 0 18px 40px -12px rgba(0,0,0,.7); }
+.trio .burbuja-misterio { background: var(--g-cosmic); color: #fff; }
+.trio a.retrato, .seccion-gris .trio a.retrato { box-shadow: 0 0 0 4px #fff, 0 18px 40px -12px rgba(0,0,0,.7); }
+.monograma { background: var(--g-cosmic); color: #fff; }
+
+/* categorías */
+.cat { background: var(--g-tarjeta), var(--cc-carbon-3); border: 1px solid rgba(255,255,255,.08); color: var(--tinta); }
+.cat::before { background: none !important; }
+.cat:nth-child(odd) { background: linear-gradient(160deg, rgba(38,53,214,.55), rgba(38,53,214,.1) 70%), var(--cc-carbon-3); }
+.cat:nth-child(even) { background: linear-gradient(160deg, rgba(245,44,16,.5), rgba(245,44,16,.08) 70%), var(--cc-carbon-3); }
+.cat h3 { color: #fff; font-size: 34px; }
+.cat-orden { font-size: 64px; color: #fff; opacity: .9; }
+.cat-pausa { background: var(--g-tarjeta), var(--cc-carbon-2) !important; color: var(--gris); }
+.cat-ficha { background: var(--g-cosmic) !important; }
+.cat-fila.c2 .cat-ficha, .cat-fila.c4 .cat-ficha, .cat-fila.c6 .cat-ficha, .cat-fila.c8 .cat-ficha { background: var(--g-rojo) !important; }
+.cat-fila.c1 .cat-ficha, .cat-fila.c3 .cat-ficha, .cat-fila.c5 .cat-ficha, .cat-fila.c7 .cat-ficha { background: var(--g-azul) !important; }
+.cat-ficha .num { font-size: 96px; }
+.consejo { background: linear-gradient(120deg, rgba(245,44,16,.18), rgba(38,53,214,.14)); border-left: 3px solid var(--cc-rojo); color: var(--tinta); }
+
+/* tienda */
+.paquete { background: var(--g-azul); color: #fff; border: 0; }
+.paquete-leclair { background: var(--g-rojo); }
+.paquete::after, .paquete-leclair::after { background: radial-gradient(closest-side, rgba(255,255,255,.18), transparent); }
+.paquete .paquete-casa { background: rgba(0,0,0,.28); }
+.paquete-incluye li { border-color: rgba(255,255,255,.25); }
+.producto-foto, .producto-foto.con-foto, .seccion-gris .producto-foto, .seccion-gris .producto-foto.con-foto { background: linear-gradient(160deg, #f4f1ec, #ddd7ce); color: #333; }
+.variantes button { color: var(--tinta); border-color: rgba(255,255,255,.25); }
+.variantes button[aria-pressed="true"] { background: var(--g-rojo); border-color: transparent; }
+.pasos li::before { background: var(--g-cosmic); color: #fff; font-family: var(--display); }
+.datos dt { color: #fff; }
+
+/* preguntas */
+.faq { border-color: rgba(255,255,255,.12); }
+.faq summary { color: #fff; }
+.faq summary::after { color: var(--cc-rojo); }
+
+/* casa: pósters */
+.poster { box-shadow: 0 20px 50px -20px rgba(0,0,0,.8); }
+.poster-pronto { background: var(--g-cosmic); color: #fff; font-family: var(--display); text-transform: uppercase; letter-spacing: .1em; font-size: 22px; }
+
+/* cierre */
+.cierre { background: var(--g-cosmic) !important; position: relative; overflow: hidden; }
+.cierre .boton { background: #fff; color: var(--cc-rojo); }
+.cierre .boton:hover { background: var(--cc-hueso); color: var(--cc-azul); }
+
+/* franja de información, como la base de los carteles */
+.franja {
+  background: var(--g-rojo); color: #fff; font-family: var(--display); text-transform: uppercase; letter-spacing: .12em;
+  font-size: clamp(14px, 1.7vw, 19px); text-align: center; padding: 14px 20px 12px; position: relative; z-index: 2;
+}
+.franja span { opacity: .55; margin: 0 .6em; }
+
+/* pie */
+.pie { color: var(--gris); }
+.pie-col h4 { font-family: var(--display); text-transform: uppercase; letter-spacing: .08em; font-size: 15px; color: #fff; }
+
+/* enlaces del nombre */
+a.nombre { text-decoration-color: rgba(255,138,107,.7); }
+
+@media (max-width: 734px) {
+  .cinta-lugar { letter-spacing: .18em; padding: .55em 1.6em .45em; }
+  .persona h3 { font-size: 22px; }
+  .cat h3 { font-size: 28px; }
+}
+
+/* el cielo de estrellas no debe recolocar la decoración */
+.con-cielo > .decor { position: absolute; z-index: 0; }
+
+/* ajustes del título y los mosaicos */
+.cartel .hero-titulo { font-size: clamp(54px, 11.6vw, 172px); }
+.cartel .hero-titulo .linea { white-space: nowrap; }
+.tile-titulo, .tile-grande, .tile-medio { font-family: var(--display); font-weight: 400; text-transform: uppercase; letter-spacing: .01em; }
+.cat-ficha::before { display: none !important; }
+.ficha-revelar .ficha-foto { background: var(--g-cosmic) !important; color: #fff; }
+.franja span { opacity: 1; margin: 0; }
+.franja .sep { opacity: .6; margin: 0 .7em; }
+
+/* ---------- Correcciones ---------- */
+/* brillos que se desvanecen antes de las orillas, para que no haya cortes entre secciones */
+:root {
+  --brillo-escena: radial-gradient(48% 42% at 14% 42%, rgba(245,44,16,.15), transparent 78%),
+                   radial-gradient(50% 44% at 86% 62%, rgba(38,53,214,.2), transparent 78%);
+}
+.seccion-gris { background-image: radial-gradient(50% 45% at 88% 45%, rgba(38,53,214,.14), transparent 78%); }
+.cabecera-negra + .seccion-negra, .cabecera-negra + .bloque { background-image: radial-gradient(50% 44% at 86% 62%, rgba(38,53,214,.18), transparent 78%); }
+
+/* "Lo esencial": el mosaico de color con texto legible */
+.tile-oscuro .tile-color, .tile-oscuro .tile-grande { color: #fff !important; -webkit-text-fill-color: #fff; background: none !important; }
+.tile-oscuro .tile-titulo, .tile-oscuro .chico, .tile-oscuro p { color: rgba(255,255,255,.85) !important; }
+.tile .tile-titulo { color: #ff8a6b; }
+.tile-color { color: #fff; -webkit-text-fill-color: transparent; background: linear-gradient(180deg, #fff 0%, #ffb3a1 100%); -webkit-background-clip: text; background-clip: text; }
