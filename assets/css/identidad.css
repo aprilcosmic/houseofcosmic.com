@@ -284,3 +284,9 @@ a.nombre { text-decoration-color: rgba(255,138,107,.7); }
 .tile-oscuro .tile-titulo, .tile-oscuro .chico, .tile-oscuro p { color: rgba(255,255,255,.85) !important; }
 .tile .tile-titulo { color: #ff8a6b; }
 .tile-color { color: #fff; -webkit-text-fill-color: transparent; background: linear-gradient(180deg, #fff 0%, #ffb3a1 100%); -webkit-background-clip: text; background-clip: text; }
+
+/* logo de la casa en el pie */
+.pie-logo { display: block; width: 150px; margin-right: 16px; transform: rotate(-2deg); transition: transform .3s; }
+.pie-logo img { width: 100%; height: auto; display: block; filter: drop-shadow(0 10px 24px rgba(99,44,197,.35)); }
+.pie-logo:hover { transform: rotate(0deg) scale(1.04); }
+@media (max-width: 734px) { .pie-logo { width: auto; flex-basis: 100%; } .pie-logo img { width: 130px; } }
