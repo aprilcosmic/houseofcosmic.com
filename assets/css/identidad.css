@@ -297,6 +297,8 @@ a.nombre { text-decoration-color: rgba(255,138,107,.7); }
 @media (max-width: 734px) { .jueces { grid-template-columns: 1fr; } }
 /* inicio: dos caras y una burbuja */
 .trio a.retrato:first-child { width: 84px; height: 84px; margin-right: -14px; z-index: 0; }
+.trio a.retrato:last-child { width: 84px; height: 84px; margin-left: -14px; z-index: 0; }
+.trio a.retrato:nth-child(2) { position: relative; z-index: 1; }
 
 /* celular: sin las dos estrellas fugaces de abajo en la portada */
 @media (max-width: 734px) {
