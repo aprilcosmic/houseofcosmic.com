@@ -290,3 +290,10 @@ a.nombre { text-decoration-color: rgba(255,138,107,.7); }
 .pie-logo img { width: 100%; height: auto; display: block; filter: drop-shadow(0 10px 24px rgba(99,44,197,.35)); }
 .pie-logo:hover { transform: rotate(0deg) scale(1.04); }
 @media (max-width: 734px) { .pie-logo { width: auto; flex-basis: 100%; } .pie-logo img { width: 130px; } }
+
+/* talento: tres fichas de jueces */
+.jueces { grid-template-columns: repeat(3, minmax(0, 340px)); }
+@media (max-width: 1068px) { .jueces { grid-template-columns: repeat(2, minmax(0, 340px)); } }
+@media (max-width: 734px) { .jueces { grid-template-columns: 1fr; } }
+/* inicio: dos caras y una burbuja */
+.trio a.retrato:first-child { width: 84px; height: 84px; margin-right: -14px; z-index: 0; }
