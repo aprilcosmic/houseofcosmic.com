@@ -1,7 +1,7 @@
 // =========================================================
 // FECHA DEL BALL: se cambia aquí y en ningún otro lado.
 // POR CONFIRMAR: el 27 de marzo se descartó por Semana Santa;
-// la propuesta es el sábado 13 de marzo de 2027. La hora (9 PM)
+// la propuesta es el sábado 13 de marzo de 2027. La hora (9 PM, sin mostrarla en el sitio)
 // también está por confirmar.
 // =========================================================
 var BALL = {
