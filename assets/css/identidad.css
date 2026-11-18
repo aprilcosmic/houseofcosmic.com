@@ -309,3 +309,5 @@ a.nombre { text-decoration-color: rgba(255,138,107,.7); }
 .colaboradores { list-style: none; padding: 0; margin: 32px auto 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px 72px; }
 .colaboradores img { display: block; height: 120px; width: auto; max-width: 260px; object-fit: contain; }
 @media (max-width: 734px) { .colaboradores { gap: 32px 40px; } .colaboradores img { height: 90px; max-width: 180px; } }
+.colaboradores a { display: block; transition: transform .2s ease, opacity .2s ease; }
+.colaboradores a:hover { transform: scale(1.05); opacity: .9; }
