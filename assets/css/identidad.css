@@ -311,3 +311,4 @@ a.nombre { text-decoration-color: rgba(255,138,107,.7); }
 @media (max-width: 734px) { .colaboradores { gap: 32px 40px; } .colaboradores img { height: 90px; max-width: 180px; } }
 .colaboradores a { display: block; transition: transform .2s ease, opacity .2s ease; }
 .colaboradores a:hover { transform: scale(1.05); opacity: .9; }
+.talento-inicio .persona-jueces { grid-column: 1 / -1; }
