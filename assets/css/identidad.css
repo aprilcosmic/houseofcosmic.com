@@ -312,3 +312,5 @@ a.nombre { text-decoration-color: rgba(255,138,107,.7); }
 .colaboradores a { display: block; transition: transform .2s ease, opacity .2s ease; }
 .colaboradores a:hover { transform: scale(1.05); opacity: .9; }
 .talento-inicio .persona-jueces { grid-column: 1 / -1; }
+.trio .burbuja-misterio.burbuja-centro { width: 132px; height: 132px; margin: 0; font-size: 44px; position: relative; z-index: 1; box-shadow: 0 0 0 4px #fff, 0 18px 40px -12px rgba(0,0,0,.7); }
+.trio .burbuja-misterio:not(.burbuja-centro) { box-shadow: 0 0 0 4px #fff; }

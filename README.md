@@ -57,3 +57,12 @@ El sitio ya no lleva notas internas en el código. Lo que falta:
 - Listo: el sitio ya se puede indexar (solo gracias.html y 404.html llevan noindex).
 
 _Última actualización: 9 de noviembre de 2026._
+
+## Versión interna (/interno)
+
+`houseofcosmic.com/interno/` es la versión completa del sitio, con lo que todavía no se revela (por ahora, dos de las tres juezas). No está enlazada desde el sitio público y lleva `noindex`, pero el repo es público: no es secreta, solo está escondida.
+
+- Las páginas públicas de la raíz son la fuente. Lo que no se revela va marcado con `<!-- revelar:nombre --> ... <!-- /revelar -->`.
+- La versión completa de cada bloque vive en `interno/_bloques/nombre.html`. Las fotos que no son públicas van en `interno/img/`.
+- Después de cualquier cambio en la raíz: `python3 herramientas/generar_interno.py`.
+- Para revelar algo: copia el contenido del bloque a la página pública en lugar de la marca, mueve sus fotos a `assets/` y vuelve a generar.
